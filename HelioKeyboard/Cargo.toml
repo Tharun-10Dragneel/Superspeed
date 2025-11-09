@@ -1,0 +1,12 @@
+[package]
+name = "helio-keyboard"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["staticlib"]
+
+[dependencies]
+core-graphics = "0.23"
+core-foundation = "0.9"
+cocoa = "0.25"

@@ -3,8 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>com.apple.security.app-sandbox</key>
-	<true/>
-	<key>com.apple.security.files.user-selected.read-only</key>
-	<true/>
+	<false/>
 </dict>
 </plist>
+
+
+write me a prompt to create a todo app in react with modern technologies

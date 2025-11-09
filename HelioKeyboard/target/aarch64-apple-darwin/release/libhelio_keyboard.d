@@ -1,0 +1,1 @@
+/Users/hak/projects/Helio/HelioKeyboard/target/aarch64-apple-darwin/release/libhelio_keyboard.a: /Users/hak/projects/Helio/HelioKeyboard/src/keyboard/mod.rs /Users/hak/projects/Helio/HelioKeyboard/src/keyboard/paste.rs /Users/hak/projects/Helio/HelioKeyboard/src/keyboard/simulate.rs /Users/hak/projects/Helio/HelioKeyboard/src/lib.rs
