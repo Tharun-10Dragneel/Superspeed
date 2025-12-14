@@ -1,8 +1,6 @@
-# Helio - Phase 1 MVP
 
-**macOS AI Communication Copilot with Ghost Text Preview**
 
-Helio helps you transform your intent into perfectly-crafted messages using a GitHub Copilot-style ghost text workflow.
+Cresecent helps you transform your intent into perfectly-crafted messages using a GitHub Copilot-style ghost text workflow.
 
 ## Phase 1 Features (Implemented)
 
