@@ -1,8 +1,10 @@
-# Xcode
-#
-# gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+.claude/
 
-## User settings
+# Xcode
 xcuserdata/
 
 ## Compatibility with Xcode 8 and earlier (ignoring not required starting Xcode 9)
@@ -30,8 +32,6 @@ DerivedData/
 *.dSYM.zip
 *.dSYM
 ito/
-*.py
-*.txt
 
 ## Playgrounds
 timeline.xctimeline
@@ -50,6 +50,7 @@ playground.xcworkspace
 # .swiftpm
 
 .build/
+.swiftpm/
 
 # CocoaPods
 #
@@ -63,13 +64,10 @@ playground.xcworkspace
 # *.xcworkspace
 
 # Carthage
-#
-# Add this line if you want to avoid checking in source code from Carthage dependencies.
-# Carthage/Checkouts
-
+Carthage/Checkouts
 Carthage/Build/
 
-# Accio dependency management
+# Accio
 Dependencies/
 .accio/
 
@@ -136,3 +134,86 @@ out/
 .env
 .env.local
 
+# Python (AgentService) - Only ignore compiled/cache files, NOT source .py files!
+__pycache__/
+*.py[cod]        # Ignores .pyc, .pyo, .pyd (bytecode) but NOT .py (source)
+*$py.class
+*.so
+.Python
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.venv/
+
+# Python Testing
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+
+# Python Distribution
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Environment Variables
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Logs
+*.log
+process_log.txt
+
+# Note: We DO track .py (Python source) and .md/.txt (documentation)
+# Only compiled Python (.pyc, .pyo) and temp files are ignored
+process_log.txt
+
+# Node/Electron (from ito)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+dist/
+out/
+
+# ITO directory (external project - if you want to ignore it entirely)
+ito/
+ito-dev/
+
+# Remove the AgentService .gitignore (use this main one)
+AgentService/.gitignore
