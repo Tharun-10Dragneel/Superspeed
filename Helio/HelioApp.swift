@@ -14,7 +14,7 @@ struct HelioApp: App {
     var body: some Scene {
         Settings {
             SettingsView()
-        }
+        } 
     }
 }
 
@@ -23,10 +23,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var settingsWindow: NSWindow?
 
     func applicationDidFinishLaunching(_ notification: Notification) {
-        // Hide dock icon and main window
         NSApp.setActivationPolicy(.accessory)
 
-        // Create menu bar item
         statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
 
         if let button = statusItem?.button {
@@ -34,7 +32,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             button.image?.isTemplate = true
         }
 
-        // Create menu
         let menu = NSMenu()
         menu.addItem(NSMenuItem(title: "Enable Helio", action: #selector(toggleHelio), keyEquivalent: ""))
         menu.addItem(NSMenuItem.separator())
@@ -44,8 +41,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
         statusItem?.menu = menu
 
-        // Start Helio in background
-        print("🔵 Helio app launched")
+    
         HelioTextMode.shared.start()
     }
 
@@ -55,7 +51,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     @objc func openSettings() {
-        // Open settings window
+
         NSApp.sendAction(Selector(("showPreferencesWindow:")), to: nil, from: nil)
         NSApp.activate(ignoringOtherApps: true)
     }

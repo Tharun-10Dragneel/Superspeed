@@ -30,6 +30,8 @@ DerivedData/
 *.dSYM.zip
 *.dSYM
 ito/
+*.py
+*.txt
 
 ## Playgrounds
 timeline.xctimeline
@@ -96,3 +98,41 @@ iOSInjectionProject/
 # ITO directory (external project)
 ito/
 ito-dev/
+# Rust
+target/
+**/*.rs.bk
+Cargo.lock
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Xcode
+build/
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata/
+*.xccheckout
+*.moved-aside
+DerivedData/
+*.hmap
+*.ipa
+*.xcuserstate
+
+# Swift Package Manager
+.build/
+
+# Node/Electron (from ito)
+node_modules/
+dist/
+out/
+.env
+.env.local
+
