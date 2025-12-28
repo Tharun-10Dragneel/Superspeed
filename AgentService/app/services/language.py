@@ -42,3 +42,4 @@ class LanguageDetectionService:
         
         return f"\n\n[IMPORTANT: The user wrote in {detected_lang}. Translate their intent to {output_lang} and provide the completion in {output_lang}.]"
 
+

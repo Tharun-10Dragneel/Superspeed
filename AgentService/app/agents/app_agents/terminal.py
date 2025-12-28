@@ -17,3 +17,4 @@ class TerminalAgent(BaseAgent):
     def system_prompt(self) -> str:
         return TERMINAL_SYSTEM_PROMPT
 
+

@@ -136,3 +136,4 @@ docker run -p 8000:8000 --env-file .env helio-agent-service
 - [ ] Add monitoring (Sentry, Prometheus)
 - [ ] Switch to async Cerebras client for better performance
 
+

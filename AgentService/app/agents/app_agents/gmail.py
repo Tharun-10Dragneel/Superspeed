@@ -17,3 +17,4 @@ class GmailAgent(BaseAgent):
     def system_prompt(self) -> str:
         return GMAIL_SYSTEM_PROMPT
 
+

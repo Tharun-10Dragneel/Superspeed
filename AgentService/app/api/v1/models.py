@@ -36,3 +36,4 @@ class HealthResponse(BaseModel):
     version: str
     service: str
 
+

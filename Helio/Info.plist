@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>NSAppleEventsUsageDescription</key>
+	<string>Helio uses accessibility features to insert your spoken words into any app and transform rough text into polished output.</string>
+	<key>CFBundleDisplayName</key>
+	<string>Helio</string>
+	<key>CFBundleName</key>
+	<string>Helio</string>
+	<key>LSMinimumSystemVersion</key>
+	<string>13.0</string>
+	<key>LSUIElement</key>
+	<false/>
+</dict>
+</plist>

@@ -48,3 +48,4 @@ async def test_completion_endpoint():
     # Should return 500 if API key missing, 200 if successful
     assert response.status_code in [200, 500]
 
+

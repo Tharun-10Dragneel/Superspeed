@@ -17,3 +17,4 @@ class SlackAgent(BaseAgent):
     def system_prompt(self) -> str:
         return SLACK_SYSTEM_PROMPT
 
+

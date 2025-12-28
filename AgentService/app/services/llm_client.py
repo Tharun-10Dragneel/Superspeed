@@ -68,3 +68,4 @@ class LLMService:
             # Pro tier: use faster/better model
             return await self.cerebras.complete(prompt, settings.pro_tier_model)
 
+

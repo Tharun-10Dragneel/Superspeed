@@ -214,6 +214,7 @@ out/
 # ITO directory (external project - if you want to ignore it entirely)
 ito/
 ito-dev/
+boring.notch-main/
 
 # Remove the AgentService .gitignore (use this main one)
 AgentService/.gitignore
