@@ -1,6 +1,6 @@
 
 
-Cresecent helps you transform your intent into perfectly-crafted messages using a GitHub Copilot-style ghost text workflow.
+## Superspeed helps you transform your intent into perfectly-crafted messages using a GitHub Copilot-style ghost text workflow.
 
 ## Phase 1 Features (Implemented)
 
