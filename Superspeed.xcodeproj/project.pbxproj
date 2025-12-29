@@ -35,9 +35,9 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		2F7E85E42E90D9EF004FB868 /* Superspeed */ = {
+		2F7E85E42E90D9EF004FB868 /* SuperspeedApp */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Superspeed;
+			path = SuperspeedApp;
 			sourceTree = "<group>";
 		};
 		2F7E85F32E90D9F1004FB868 /* SuperspeedTests */ = {
@@ -407,7 +407,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Superspeed/Superspeed.entitlements;
+				CODE_SIGN_ENTITLEMENTS = SuperspeedApp/Superspeed.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -439,7 +439,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Superspeed/Superspeed.entitlements;
+				CODE_SIGN_ENTITLEMENTS = SuperspeedApp/Superspeed.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
