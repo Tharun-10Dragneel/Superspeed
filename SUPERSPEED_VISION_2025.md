@@ -1,4 +1,4 @@
-# Helio: The Universal Intelligent Input Layer
+# Superspeed: The Universal Intelligent Input Layer
 
 **Document Version:** December 2025  
 **Status:** In Development
@@ -7,7 +7,7 @@
 
 ## Executive Summary
 
-Helio is a system-wide AI-powered input layer for macOS (expanding to Linux and Windows) that transforms raw user intent into polished, context-aware output across every application. Unlike existing tools that require context-switching, manual invocation, or work only within specific apps, Helio operates invisibly — users simply type naturally, and intelligent suggestions appear as ghost text that can be accepted with Tab or rejected with Esc.
+Superspeed is a system-wide AI-powered input layer for macOS (expanding to Linux and Windows) that transforms raw user intent into polished, context-aware output across every application. Unlike existing tools that require context-switching, manual invocation, or work only within specific apps, Superspeed operates invisibly — users simply type naturally, and intelligent suggestions appear as ghost text that can be accepted with Tab or rejected with Esc.
 
 **Core Philosophy:** Take the complex engineering. Provide simplicity to users.
 
@@ -43,11 +43,11 @@ Users struggle with:
 
 ---
 
-## The Solution: Helio
+## The Solution: Superspeed
 
 ### One Invisible Layer. Five Pillars. Every App.
 
-Helio is a single $8.99/month subscription that provides:
+Superspeed is a single $8.99/month subscription that provides:
 
 ```
 ┌─────────────────────────────────────────────────────────┐
@@ -65,13 +65,13 @@ Helio is a single $8.99/month subscription that provides:
 ### The Five Pillars
 
 #### 1. Prompt Supercharger
-When typing in AI tools (ChatGPT, Claude, Cursor, Midjourney), Helio transforms vague requests into expert-level prompts.
+When typing in AI tools (ChatGPT, Claude, Cursor, Midjourney), Superspeed transforms vague requests into expert-level prompts.
 
 **Example:**
 ```
 User types: "make this python better"
 
-Helio ghosts: "Refactor this Python code for better readability and 
+Superspeed ghosts: "Refactor this Python code for better readability and 
 performance. Specifically: 1) Add type hints, 2) Extract repeated logic 
 into helper functions, 3) Add docstrings following Google style, 
 4) Optimize any O(n²) operations if possible. Preserve existing 
@@ -81,13 +81,13 @@ functionality and add inline comments explaining non-obvious changes."
 **Supported Apps:** ChatGPT, Claude, Cursor, Perplexity, Gemini, Midjourney, v0, Bolt, Grok, Copilot
 
 #### 2. Communication Polisher
-When typing in communication apps, Helio transforms raw thoughts into polished, professional messages.
+When typing in communication apps, Superspeed transforms raw thoughts into polished, professional messages.
 
 **Example:**
 ```
 User types: "need this fixed asap breaks login"
 
-Helio ghosts: "Hi team, could you please prioritize the login issue? 
+Superspeed ghosts: "Hi team, could you please prioritize the login issue? 
 It appears to be critical and is blocking users. Let me know if you 
 need any additional context. Thanks!"
 ```
@@ -95,13 +95,13 @@ need any additional context. Thanks!"
 **Supported Apps:** Gmail, Slack, Discord, WhatsApp, iMessage, Teams, LinkedIn, Twitter/X, Telegram, Outlook
 
 #### 3. Language Bridge
-Helio detects input language and automatically outputs in the appropriate language for the context.
+Superspeed detects input language and automatically outputs in the appropriate language for the context.
 
 **Example:**
 ```
 User types (in Hindi): "जॉन को बताओ कि API में दिक्कत है"
 
-Helio ghosts (for work Slack): "Hey John, heads up - there's an issue 
+Superspeed ghosts (for work Slack): "Hey John, heads up - there's an issue 
 with the API. Can you take a look when you get a chance?"
 ```
 
@@ -113,25 +113,25 @@ with the API. Can you take a look when you get a chance?"
 **Supported Languages:** Hindi, Hinglish, English (expanding to Spanish, French, German, Mandarin)
 
 #### 4. Terminal Commands
-When in terminal applications, Helio transforms natural language into executable shell commands.
+When in terminal applications, Superspeed transforms natural language into executable shell commands.
 
 **Example:**
 ```
 User types: "find all python files modified in last 24 hours over 1mb"
 
-Helio ghosts: find . -name "*.py" -mtime -1 -size +1M
+Superspeed ghosts: find . -name "*.py" -mtime -1 -size +1M
 ```
 
 **Supported Apps:** Terminal.app, iTerm2, Warp, Alacritty, Hyper, VS Code terminal, any shell
 
 #### 5. Spreadsheet Formulas
-When in spreadsheet applications, Helio transforms natural language into formulas.
+When in spreadsheet applications, Superspeed transforms natural language into formulas.
 
 **Example:**
 ```
 User types: "sum column B if column A contains 'sales' and date is this month"
 
-Helio ghosts: =SUMIFS(B:B, A:A, "*sales*", C:C, ">="&DATE(YEAR(TODAY()),MONTH(TODAY()),1), C:C, "<="&EOMONTH(TODAY(),0))
+Superspeed ghosts: =SUMIFS(B:B, A:A, "*sales*", C:C, ">="&DATE(YEAR(TODAY()),MONTH(TODAY()),1), C:C, "<="&EOMONTH(TODAY(),0))
 ```
 
 **Supported Apps:** Microsoft Excel, Google Sheets, Apple Numbers, Airtable, Notion tables
@@ -214,7 +214,7 @@ Helio ghosts: =SUMIFS(B:B, A:A, "*sales*", C:C, ">="&DATE(YEAR(TODAY()),MONTH(TO
 
 ### Competitive Matrix
 
-| Feature | Helio | Superhuman | Apple Intel | Copilot | Raycast | Warp |
+| Feature | Superspeed | Superhuman | Apple Intel | Copilot | Raycast | Warp |
 |---------|-------|------------|-------------|---------|---------|------|
 | **Inline Ghost Text** | ✅ | ❌ | ❌ | ✅ (code only) | ❌ | ❌ |
 | **System-wide** | ✅ | ✅ | Partial | ❌ | ❌ | ❌ |
@@ -241,7 +241,7 @@ Helio ghosts: =SUMIFS(B:B, A:A, "*sales*", C:C, ">="&DATE(YEAR(TODAY()),MONTH(TO
 ### Installation & Setup (2 minutes)
 
 ```
-1. Download Helio from helio.app
+1. Download Superspeed from superspeed.app
 2. Drag to Applications
 3. Launch → Grant Accessibility + Input Monitoring permissions
 4. Done
@@ -251,7 +251,7 @@ Helio ghosts: =SUMIFS(B:B, A:A, "*sales*", C:C, ">="&DATE(YEAR(TODAY()),MONTH(TO
 
 ```
 ┌────────────────────────────────────────────────┐
-│  Welcome to Helio                              │
+│  Welcome to Superspeed                              │
 │                                                │
 │  Just type what you WANT, not how to do it.   │
 │                                                │
@@ -260,7 +260,7 @@ Helio ghosts: =SUMIFS(B:B, A:A, "*sales*", C:C, ">="&DATE(YEAR(TODAY()),MONTH(TO
 │  • "find large files modified today"          │
 │  • "sum sales if region is west"              │
 │                                                │
-│  When you pause, Helio suggests.              │
+│  When you pause, Superspeed suggests.              │
 │  Tab = Accept | Esc = Reject                  │
 │                                                │
 │  [Got it, let's go →]                         │
@@ -387,7 +387,7 @@ Ghost: Hey team, heads up - today's meeting is cancelled.
 Each app has a dedicated agent (prompt file):
 
 ```
-helio-agents/
+superspeed-agents/
 ├── prompts/
 │   ├── gmail.md
 │   ├── slack.md
@@ -436,13 +436,13 @@ Thanks!
 
 ## Pricing Strategy
 
-### Helio Free
+### Superspeed Free
 - All 5 pillars
 - All 40+ app agents
 - 25 generations per day
 - Basic language support (English)
 
-### Helio Pro ($8.99/month)
+### Superspeed Pro ($8.99/month)
 - Unlimited generations
 - Full language bridge (Hindi, Hinglish, Spanish, French, German, Mandarin)
 - Priority LLM (faster responses)
@@ -528,7 +528,7 @@ Thanks!
 
 ## Summary
 
-Helio is the **invisible intelligence layer** that upgrades typing across every app.
+Superspeed is the **invisible intelligence layer** that upgrades typing across every app.
 
 **For users:** Just type naturally. Tab to accept. No learning curve.
 

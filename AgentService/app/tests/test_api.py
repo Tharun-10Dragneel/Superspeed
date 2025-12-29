@@ -20,7 +20,7 @@ def test_root():
     """Test root endpoint"""
     response = client.get("/")
     assert response.status_code == 200
-    assert "Helio" in response.json()["message"]
+    assert "Superspeed" in response.json()["message"]
 
 
 def test_list_agents():

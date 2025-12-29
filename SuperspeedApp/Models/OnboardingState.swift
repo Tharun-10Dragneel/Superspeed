@@ -1,6 +1,6 @@
 //
 //  OnboardingState.swift
-//  Helio
+//  Superspeed
 //
 //  Manages the onboarding flow state and navigation
 //

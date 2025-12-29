@@ -1,6 +1,6 @@
 //
 //  SupabaseService.swift
-//  Helio
+//  Superspeed
 //
 //  Supabase client wrapper for authentication and database operations
 //  NOTE: Requires Supabase Swift SDK to be added via SPM

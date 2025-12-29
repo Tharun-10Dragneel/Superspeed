@@ -37,7 +37,7 @@ class CerebrasClient:
         """
         response = self.client.chat.completions.create(
             messages=[
-                {"role": "system", "content": "You are Helio, an intelligent text completion assistant."},
+                {"role": "system", "content": "You are Superspeed, an intelligent text completion assistant."},
                 {"role": "user", "content": prompt}
             ],
             model=model,

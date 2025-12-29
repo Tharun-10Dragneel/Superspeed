@@ -1,6 +1,6 @@
 //
 //  OnboardingCoordinator.swift
-//  Helio
+//  Superspeed
 //
 //  Main coordinator for the onboarding flow - manages navigation between screens
 //

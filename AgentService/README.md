@@ -1,4 +1,4 @@
-# Helio Agent Service
+# Superspeed Agent Service
 
 **Multi-agent backend for intelligent text completion across all apps**
 
@@ -115,8 +115,8 @@ pytest app/tests/
 ## Docker Deployment
 
 ```bash
-docker build -t helio-agent-service .
-docker run -p 8000:8000 --env-file .env helio-agent-service
+docker build -t superspeed-agent-service .
+docker run -p 8000:8000 --env-file .env superspeed-agent-service
 ```
 
 ## Performance

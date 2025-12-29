@@ -1,6 +1,6 @@
 //
 //  ReferralView.swift
-//  Helio
+//  Superspeed
 //
 //  Referral source tracking screen
 //

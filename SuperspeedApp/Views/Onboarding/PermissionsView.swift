@@ -1,6 +1,6 @@
 //
 //  PermissionsView.swift
-//  Helio
+//  Superspeed
 //
 //  Accessibility permission request screen
 //
@@ -51,7 +51,7 @@ struct PermissionsView: View {
                                 .font(.system(size: 16))
                                 .foregroundColor(Color("MutedForeground"))
                         } else {
-                            Text("Set up Helio on your computer")
+                            Text("Set up Superspeed on your computer")
                                 .font(.system(size: 32, weight: .semibold))
                                 .foregroundColor(Color("Foreground"))
 
@@ -63,8 +63,8 @@ struct PermissionsView: View {
 
                     // Permission Card
                     PermissionCard(
-                        title: "Allow Helio to insert text",
-                        description: "This lets Helio put your spoken words in the right textbox and edit text according to your commands",
+                        title: "Allow Superspeed to insert text",
+                        description: "This lets Superspeed put your spoken words in the right textbox and edit text according to your commands",
                         isGranted: hasAccessibilityPermission,
                         isPolling: isPolling,
                         onAllow: requestAccessibilityPermission

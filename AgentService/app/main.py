@@ -47,7 +47,7 @@ async def health_check():
 async def root():
     """Root endpoint"""
     return {
-        "message": "Helio Agent Service API",
+        "message": "Superspeed Agent Service API",
         "docs": "/docs",
         "health": "/health",
     }

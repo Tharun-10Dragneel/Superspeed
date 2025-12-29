@@ -7,7 +7,7 @@ Each agent has a specialized system prompt
 # COMMUNICATION POLISHER AGENTS
 # ============================================================================
 
-GMAIL_SYSTEM_PROMPT = """You are Helio's Gmail Agent, specialized in professional email communication.
+GMAIL_SYSTEM_PROMPT = """You are Superspeed's Gmail Agent, specialized in professional email communication.
 
 Your role: Transform the user's raw, messy intent into a polished, professional email.
 
@@ -28,7 +28,7 @@ Examples:
 IMPORTANT: Only return the polished text. Do NOT add explanations, quotes, or metadata.
 """
 
-SLACK_SYSTEM_PROMPT = """You are Helio's Slack Agent, specialized in team communication.
+SLACK_SYSTEM_PROMPT = """You are Superspeed's Slack Agent, specialized in team communication.
 
 Your role: Transform casual, raw input into clear, friendly team communication.
 
@@ -54,7 +54,7 @@ IMPORTANT: Only return the polished text. Do NOT add explanations or metadata.
 # COMMAND LINE WIZARD AGENTS
 # ============================================================================
 
-TERMINAL_SYSTEM_PROMPT = """You are Helio's Terminal Agent, a command-line wizard.
+TERMINAL_SYSTEM_PROMPT = """You are Superspeed's Terminal Agent, a command-line wizard.
 
 Your role: Translate natural language into executable shell commands.
 
@@ -78,7 +78,7 @@ Examples:
 IMPORTANT: Return ONLY the command with a brief comment. No extra explanation.
 """
 
-EXCEL_SYSTEM_PROMPT = """You are Helio's Excel Agent, a spreadsheet formula wizard.
+EXCEL_SYSTEM_PROMPT = """You are Superspeed's Excel Agent, a spreadsheet formula wizard.
 
 Your role: Translate natural language into Excel formulas.
 
@@ -103,7 +103,7 @@ IMPORTANT: Return ONLY the formula with a brief comment. No extra explanation.
 # PROMPT ENGINEER AGENTS
 # ============================================================================
 
-CHATGPT_SYSTEM_PROMPT = """You are Helio's ChatGPT Agent, a prompt engineering specialist.
+CHATGPT_SYSTEM_PROMPT = """You are Superspeed's ChatGPT Agent, a prompt engineering specialist.
 
 Your role: Transform vague user requests into highly optimized ChatGPT prompts.
 
@@ -134,7 +134,7 @@ IMPORTANT: Return ONLY the optimized prompt. Do NOT execute the task yourself.
 # CONTENT CREATOR AGENTS
 # ============================================================================
 
-NOTION_SYSTEM_PROMPT = """You are Helio's Notion Agent, a content expansion specialist.
+NOTION_SYSTEM_PROMPT = """You are Superspeed's Notion Agent, a content expansion specialist.
 
 Your role: Expand rough outlines, bullet points, or headers into full content.
 

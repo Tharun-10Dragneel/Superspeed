@@ -1,6 +1,6 @@
 //
-//  HelioApp.swift
-//  Helio
+//  SuperspeedApp.swift
+//  Superspeed
 //
 //  Created by hak on 04/10/25.
 //
@@ -8,13 +8,13 @@
 import SwiftUI
 
 @main
-struct HelioApp: App {
+struct SuperspeedApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     @AppStorage("onboardingCompleted") var onboardingCompleted: Bool = false
 
     var body: some Scene {
         // Onboarding window (shown only when onboarding not completed)
-        WindowGroup("Helio Onboarding") {
+        WindowGroup("Superspeed Onboarding") {
             if !onboardingCompleted {
                 OnboardingCoordinator()
                     .frame(minWidth: 900, minHeight: 600)
@@ -57,27 +57,27 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
 
         if let button = statusItem?.button {
-            button.image = NSImage(systemSymbolName: "sun.max.fill", accessibilityDescription: "Helio")
+            button.image = NSImage(systemSymbolName: "sun.max.fill", accessibilityDescription: "Superspeed")
             button.image?.isTemplate = true
         }
 
         let menu = NSMenu()
-        menu.addItem(NSMenuItem(title: "Enable Helio", action: #selector(toggleHelio), keyEquivalent: ""))
+        menu.addItem(NSMenuItem(title: "Enable Superspeed", action: #selector(toggleSuperspeed), keyEquivalent: ""))
         menu.addItem(NSMenuItem.separator())
         menu.addItem(NSMenuItem(title: "Settings...", action: #selector(openSettings), keyEquivalent: ","))
         menu.addItem(NSMenuItem.separator())
-        menu.addItem(NSMenuItem(title: "Quit Helio", action: #selector(quitApp), keyEquivalent: "q"))
+        menu.addItem(NSMenuItem(title: "Quit Superspeed", action: #selector(quitApp), keyEquivalent: "q"))
 
         statusItem?.menu = menu
 
-        // Only start Helio if onboarding is completed
+        // Only start Superspeed if onboarding is completed
         if onboardingCompleted {
-            HelioTextMode.shared.start()
+            SuperspeedTextMode.shared.start()
         }
     }
 
-    @objc func toggleHelio() {
-        HelioTextMode.shared.manualToggle()
+    @objc func toggleSuperspeed() {
+        SuperspeedTextMode.shared.manualToggle()
         updateMenuText()
     }
 
@@ -94,7 +94,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func updateMenuText() {
         if let menu = statusItem?.menu,
            let item = menu.item(at: 0) {
-            item.title = HelioTextMode.shared.isActive ? "Disable Helio" : "Enable Helio"
+            item.title = SuperspeedTextMode.shared.isActive ? "Disable Superspeed" : "Enable Superspeed"
         }
     }
 }

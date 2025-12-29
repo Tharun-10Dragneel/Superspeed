@@ -10,7 +10,7 @@ class Settings(BaseSettings):
     """Application settings loaded from environment variables"""
     
     # API Configuration
-    app_name: str = "Helio Agent Service"
+    app_name: str = "Superspeed Agent Service"
     app_version: str = "0.1.0"
     debug: bool = False
     

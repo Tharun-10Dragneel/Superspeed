@@ -1,6 +1,6 @@
 //
 //  GoodToGoView.swift
-//  Helio
+//  Superspeed
 //
 //  Setup completion confirmation screen
 //
@@ -40,7 +40,7 @@ struct GoodToGoView: View {
                             .foregroundColor(Color("Foreground"))
                             .fixedSize(horizontal: false, vertical: true)
 
-                        Text("You're all set! Helio has the permissions it needs to transform your typing and speech into polished output.")
+                        Text("You're all set! Superspeed has the permissions it needs to transform your typing and speech into polished output.")
                             .font(.system(size: 16))
                             .foregroundColor(Color("MutedForeground"))
                             .fixedSize(horizontal: false, vertical: true)

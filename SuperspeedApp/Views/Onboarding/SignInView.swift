@@ -1,6 +1,6 @@
 //
 //  SignInView.swift
-//  Helio
+//  Superspeed
 //
 //  Sign in screen for returning users
 //
@@ -25,7 +25,7 @@ struct SignInView: View {
 
                 // Logo and title
                 VStack(alignment: .leading, spacing: 16) {
-                    // Helio logo placeholder
+                    // Superspeed logo placeholder
                     RoundedRectangle(cornerRadius: 12)
                         .fill(Color("Foreground"))
                         .frame(width: 60, height: 60)

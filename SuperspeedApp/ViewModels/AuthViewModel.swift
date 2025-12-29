@@ -1,6 +1,6 @@
 //
 //  AuthViewModel.swift
-//  Helio
+//  Superspeed
 //
 //  View model for handling authentication logic and UI state
 //

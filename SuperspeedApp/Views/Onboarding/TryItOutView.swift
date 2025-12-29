@@ -1,6 +1,6 @@
 //
 //  TryItOutView.swift
-//  Helio
+//  Superspeed
 //
 //  Interactive demo screen (placeholder - to be designed by user)
 //

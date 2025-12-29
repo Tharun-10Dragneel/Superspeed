@@ -3,22 +3,22 @@ Custom Error Classes
 """
 
 
-class HelioError(Exception):
-    """Base error class for Helio Agent Service"""
+class SuperspeedError(Exception):
+    """Base error class for Superspeed Agent Service"""
     pass
 
 
-class AgentNotFoundError(HelioError):
+class AgentNotFoundError(SuperspeedError):
     """Raised when requested agent doesn't exist"""
     pass
 
 
-class LLMError(HelioError):
+class LLMError(SuperspeedError):
     """Raised when LLM API call fails"""
     pass
 
 
-class RateLimitError(HelioError):
+class RateLimitError(SuperspeedError):
     """Raised when user exceeds rate limit"""
     pass
 

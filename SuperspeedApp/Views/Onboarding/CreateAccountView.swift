@@ -1,6 +1,6 @@
 //
 //  CreateAccountView.swift
-//  Helio
+//  Superspeed
 //
 //  First onboarding screen - account creation
 //
@@ -24,13 +24,13 @@ struct CreateAccountView: View {
 
                 // Logo and title
                 VStack(alignment: .leading, spacing: 16) {
-                    // Helio logo placeholder
+                    // Superspeed logo placeholder
                     RoundedRectangle(cornerRadius: 12)
                         .fill(Color("Foreground"))
                         .frame(width: 60, height: 60)
 
                     VStack(alignment: .leading, spacing: 8) {
-                        Text("Get started with Helio")
+                        Text("Get started with Superspeed")
                             .font(.system(size: 32, weight: .semibold))
                             .foregroundColor(Color("Foreground"))
 

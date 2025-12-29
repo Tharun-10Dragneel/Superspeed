@@ -1,4 +1,4 @@
-# Helio Agent Service Dependencies
+# Superspeed Agent Service Dependencies
 
 # Web Framework
 fastapi==0.115.0

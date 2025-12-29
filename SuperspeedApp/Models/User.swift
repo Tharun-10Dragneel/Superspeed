@@ -1,6 +1,6 @@
 //
 //  User.swift
-//  Helio
+//  Superspeed
 //
 //  User model representing an authenticated user
 //

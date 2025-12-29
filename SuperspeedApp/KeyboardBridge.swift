@@ -1,6 +1,6 @@
 //
 //  KeyboardBridge.swift
-//  Helio
+//  Superspeed
 //
 //  Swift ↔ Rust FFI Bridge
 //
@@ -8,7 +8,7 @@
 
 import Foundation
 import AppKit
-import HelioKeyboard  // from module.modulemap
+import SuperspeedKeyboard  // from module.modulemap
 import ApplicationServices // for AX APIs
 
 final class KeyboardBridge {
@@ -28,7 +28,7 @@ final class KeyboardBridge {
     ensureAccessibility()
 
     let ok = text.withCString { cstr in
-      helio_insert_ghost_text_v2(cstr)
+      superspeed_insert_ghost_text_v2(cstr)
     }
 
     if !ok {

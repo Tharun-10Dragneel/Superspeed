@@ -1,6 +1,6 @@
 //
 //  AuthService.swift
-//  Helio
+//  Superspeed
 //
 //  Simplified authentication service interface
 //
