@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2FF7A4352EC0EC91000D1D2A /* libhelio_keyboard.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FF7A4342EC0EC91000D1D2A /* libhelio_keyboard.a */; };
+		2FF7A4352EC0EC91000D1D2A /* libsuperspeed_keyboard.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FF7A4342EC0EC91000D1D2A /* libsuperspeed_keyboard.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -16,38 +16,38 @@
 			containerPortal = 2F7E85DA2E90D9EF004FB868 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 2F7E85E12E90D9EF004FB868;
-			remoteInfo = Helio;
+			remoteInfo = Superspeed;
 		};
 		2F7E85FB2E90D9F1004FB868 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2F7E85DA2E90D9EF004FB868 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 2F7E85E12E90D9EF004FB868;
-			remoteInfo = Helio;
+			remoteInfo = Superspeed;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2F7E85E22E90D9EF004FB868 /* Helio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Helio.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		2F7E85F02E90D9F1004FB868 /* HelioTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HelioTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2F7E85FA2E90D9F1004FB868 /* HelioUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HelioUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2FF7A4342EC0EC91000D1D2A /* libhelio_keyboard.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libhelio_keyboard.a; path = "HelioKeyboard/target/aarch64-apple-darwin/release/libhelio_keyboard.a"; sourceTree = "<group>"; };
+		2F7E85E22E90D9EF004FB868 /* Superspeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Superspeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F7E85F02E90D9F1004FB868 /* SuperspeedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SuperspeedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F7E85FA2E90D9F1004FB868 /* SuperspeedUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SuperspeedUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2FF7A4342EC0EC91000D1D2A /* libsuperspeed_keyboard.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libsuperspeed_keyboard.a; path = "SuperspeedKeyboard/target/aarch64-apple-darwin/release/libsuperspeed_keyboard.a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		2F7E85E42E90D9EF004FB868 /* Helio */ = {
+		2F7E85E42E90D9EF004FB868 /* Superspeed */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Helio;
+			path = Superspeed;
 			sourceTree = "<group>";
 		};
-		2F7E85F32E90D9F1004FB868 /* HelioTests */ = {
+		2F7E85F32E90D9F1004FB868 /* SuperspeedTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = HelioTests;
+			path = SuperspeedTests;
 			sourceTree = "<group>";
 		};
-		2F7E85FD2E90D9F1004FB868 /* HelioUITests */ = {
+		2F7E85FD2E90D9F1004FB868 /* SuperspeedUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = HelioUITests;
+			path = SuperspeedUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -57,7 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2FF7A4352EC0EC91000D1D2A /* libhelio_keyboard.a in Frameworks */,
+				2FF7A4352EC0EC91000D1D2A /* libsuperspeed_keyboard.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,9 +81,9 @@
 		2F7E85D92E90D9EF004FB868 = {
 			isa = PBXGroup;
 			children = (
-				2F7E85E42E90D9EF004FB868 /* Helio */,
-				2F7E85F32E90D9F1004FB868 /* HelioTests */,
-				2F7E85FD2E90D9F1004FB868 /* HelioUITests */,
+				2F7E85E42E90D9EF004FB868 /* Superspeed */,
+				2F7E85F32E90D9F1004FB868 /* SuperspeedTests */,
+				2F7E85FD2E90D9F1004FB868 /* SuperspeedUITests */,
 				2FF7A4332EC0EC90000D1D2A /* Frameworks */,
 				2F7E85E32E90D9EF004FB868 /* Products */,
 			);
@@ -92,9 +92,9 @@
 		2F7E85E32E90D9EF004FB868 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2F7E85E22E90D9EF004FB868 /* Helio.app */,
-				2F7E85F02E90D9F1004FB868 /* HelioTests.xctest */,
-				2F7E85FA2E90D9F1004FB868 /* HelioUITests.xctest */,
+				2F7E85E22E90D9EF004FB868 /* Superspeed.app */,
+				2F7E85F02E90D9F1004FB868 /* SuperspeedTests.xctest */,
+				2F7E85FA2E90D9F1004FB868 /* SuperspeedUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -102,7 +102,7 @@
 		2FF7A4332EC0EC90000D1D2A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2FF7A4342EC0EC91000D1D2A /* libhelio_keyboard.a */,
+				2FF7A4342EC0EC91000D1D2A /* libsuperspeed_keyboard.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -110,9 +110,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2F7E85E12E90D9EF004FB868 /* Helio */ = {
+		2F7E85E12E90D9EF004FB868 /* Superspeed */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2F7E86042E90D9F1004FB868 /* Build configuration list for PBXNativeTarget "Helio" */;
+			buildConfigurationList = 2F7E86042E90D9F1004FB868 /* Build configuration list for PBXNativeTarget "Superspeed" */;
 			buildPhases = (
 				2F7E85DE2E90D9EF004FB868 /* Sources */,
 				2F7E85DF2E90D9EF004FB868 /* Frameworks */,
@@ -123,18 +123,18 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				2F7E85E42E90D9EF004FB868 /* Helio */,
+				2F7E85E42E90D9EF004FB868 /* Superspeed */,
 			);
-			name = Helio;
+			name = Superspeed;
 			packageProductDependencies = (
 			);
-			productName = Helio;
-			productReference = 2F7E85E22E90D9EF004FB868 /* Helio.app */;
+			productName = Superspeed;
+			productReference = 2F7E85E22E90D9EF004FB868 /* Superspeed.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2F7E85EF2E90D9F1004FB868 /* HelioTests */ = {
+		2F7E85EF2E90D9F1004FB868 /* SuperspeedTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2F7E86072E90D9F1004FB868 /* Build configuration list for PBXNativeTarget "HelioTests" */;
+			buildConfigurationList = 2F7E86072E90D9F1004FB868 /* Build configuration list for PBXNativeTarget "SuperspeedTests" */;
 			buildPhases = (
 				2F7E85EC2E90D9F1004FB868 /* Sources */,
 				2F7E85ED2E90D9F1004FB868 /* Frameworks */,
@@ -146,18 +146,18 @@
 				2F7E85F22E90D9F1004FB868 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				2F7E85F32E90D9F1004FB868 /* HelioTests */,
+				2F7E85F32E90D9F1004FB868 /* SuperspeedTests */,
 			);
-			name = HelioTests;
+			name = SuperspeedTests;
 			packageProductDependencies = (
 			);
-			productName = HelioTests;
-			productReference = 2F7E85F02E90D9F1004FB868 /* HelioTests.xctest */;
+			productName = SuperspeedTests;
+			productReference = 2F7E85F02E90D9F1004FB868 /* SuperspeedTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		2F7E85F92E90D9F1004FB868 /* HelioUITests */ = {
+		2F7E85F92E90D9F1004FB868 /* SuperspeedUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2F7E860A2E90D9F1004FB868 /* Build configuration list for PBXNativeTarget "HelioUITests" */;
+			buildConfigurationList = 2F7E860A2E90D9F1004FB868 /* Build configuration list for PBXNativeTarget "SuperspeedUITests" */;
 			buildPhases = (
 				2F7E85F62E90D9F1004FB868 /* Sources */,
 				2F7E85F72E90D9F1004FB868 /* Frameworks */,
@@ -169,13 +169,13 @@
 				2F7E85FC2E90D9F1004FB868 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				2F7E85FD2E90D9F1004FB868 /* HelioUITests */,
+				2F7E85FD2E90D9F1004FB868 /* SuperspeedUITests */,
 			);
-			name = HelioUITests;
+			name = SuperspeedUITests;
 			packageProductDependencies = (
 			);
-			productName = HelioUITests;
-			productReference = 2F7E85FA2E90D9F1004FB868 /* HelioUITests.xctest */;
+			productName = SuperspeedUITests;
+			productReference = 2F7E85FA2E90D9F1004FB868 /* SuperspeedUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -201,7 +201,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 2F7E85DD2E90D9EF004FB868 /* Build configuration list for PBXProject "Helio" */;
+			buildConfigurationList = 2F7E85DD2E90D9EF004FB868 /* Build configuration list for PBXProject "Superspeed" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -215,9 +215,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2F7E85E12E90D9EF004FB868 /* Helio */,
-				2F7E85EF2E90D9F1004FB868 /* HelioTests */,
-				2F7E85F92E90D9F1004FB868 /* HelioUITests */,
+				2F7E85E12E90D9EF004FB868 /* Superspeed */,
+				2F7E85EF2E90D9F1004FB868 /* SuperspeedTests */,
+				2F7E85F92E90D9F1004FB868 /* SuperspeedUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -273,12 +273,12 @@
 /* Begin PBXTargetDependency section */
 		2F7E85F22E90D9F1004FB868 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2F7E85E12E90D9EF004FB868 /* Helio */;
+			target = 2F7E85E12E90D9EF004FB868 /* Superspeed */;
 			targetProxy = 2F7E85F12E90D9F1004FB868 /* PBXContainerItemProxy */;
 		};
 		2F7E85FC2E90D9F1004FB868 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2F7E85E12E90D9EF004FB868 /* Helio */;
+			target = 2F7E85E12E90D9EF004FB868 /* Superspeed */;
 			targetProxy = 2F7E85FB2E90D9F1004FB868 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -407,7 +407,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Helio/Helio.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Superspeed/Superspeed.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -420,11 +420,11 @@
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/HelioKeyboard/target/aarch64-apple-darwin/release",
+					"$(PROJECT_DIR)/SuperspeedKeyboard/target/aarch64-apple-darwin/release",
 				);
-								OTHER_LDFLAGS = "-lc++";
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.helio.Helio;
+				OTHER_LDFLAGS = "-lc++";
+				PRODUCT_BUNDLE_IDENTIFIER = com.superspeed.Superspeed;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -437,7 +437,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Helio/Helio.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Superspeed/Superspeed.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -450,11 +450,11 @@
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/HelioKeyboard/target/aarch64-apple-darwin/release",
+					"$(PROJECT_DIR)/SuperspeedKeyboard/target/aarch64-apple-darwin/release",
 				);
-								OTHER_LDFLAGS = "-lc++";
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.helio.Helio;
+				OTHER_LDFLAGS = "-lc++";
+				PRODUCT_BUNDLE_IDENTIFIER = com.superspeed.Superspeed;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -471,11 +471,11 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 15.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.helio.HelioTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.superspeed.SuperspeedTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Helio.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Helio";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Superspeed.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Superspeed";
 			};
 			name = Debug;
 		};
@@ -488,11 +488,11 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 15.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.helio.HelioTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.superspeed.SuperspeedTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Helio.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Helio";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Superspeed.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Superspeed";
 			};
 			name = Release;
 		};
@@ -503,11 +503,11 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.helio.HelioUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.superspeed.SuperspeedUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = Helio;
+				TEST_TARGET_NAME = Superspeed;
 			};
 			name = Debug;
 		};
@@ -518,18 +518,18 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.helio.HelioUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.superspeed.SuperspeedUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = Helio;
+				TEST_TARGET_NAME = Superspeed;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2F7E85DD2E90D9EF004FB868 /* Build configuration list for PBXProject "Helio" */ = {
+		2F7E85DD2E90D9EF004FB868 /* Build configuration list for PBXProject "Superspeed" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2F7E86022E90D9F1004FB868 /* Debug */,
@@ -538,7 +538,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2F7E86042E90D9F1004FB868 /* Build configuration list for PBXNativeTarget "Helio" */ = {
+		2F7E86042E90D9F1004FB868 /* Build configuration list for PBXNativeTarget "Superspeed" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2F7E86052E90D9F1004FB868 /* Debug */,
@@ -547,7 +547,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2F7E86072E90D9F1004FB868 /* Build configuration list for PBXNativeTarget "HelioTests" */ = {
+		2F7E86072E90D9F1004FB868 /* Build configuration list for PBXNativeTarget "SuperspeedTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2F7E86082E90D9F1004FB868 /* Debug */,
@@ -556,7 +556,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2F7E860A2E90D9F1004FB868 /* Build configuration list for PBXNativeTarget "HelioUITests" */ = {
+		2F7E860A2E90D9F1004FB868 /* Build configuration list for PBXNativeTarget "SuperspeedUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2F7E860B2E90D9F1004FB868 /* Debug */,

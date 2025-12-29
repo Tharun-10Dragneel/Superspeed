@@ -1,6 +1,6 @@
-# **Helio - Product Requirements Document (PRD)**
+# **Superspeed - Product Requirements Document (PRD)**
 
-**Product Name:** Helio  
+**Product Name:** Superspeed  
 **Tagline:** The universal AI copilot for macOS  
 **Version:** 1.0 (V1: Thought Partner) → 2.0 (V2: Action Engine)  
 **Owner:** [Your Name]  
@@ -12,11 +12,11 @@
 
 ## **1. Executive Summary**
 
-Helio is a native macOS application that acts as a universal AI copilot, living inside every text field across the entire operating system. It eliminates the friction of writing, context-switching, and information retrieval by providing intelligent, context-aware text suggestions as "ghost text" exactly where the user is typing.
+Superspeed is a native macOS application that acts as a universal AI copilot, living inside every text field across the entire operating system. It eliminates the friction of writing, context-switching, and information retrieval by providing intelligent, context-aware text suggestions as "ghost text" exactly where the user is typing.
 
-Helio operates in three intelligent modes—**Autocomplete**, **Generation**, and **Rewriting**—adapting its behavior based on what the user has typed. Each application gets its own specialized AI agent that understands the context and communication style appropriate for that app. The system learns from user feedback to personalize tone, format, and vocabulary over time.
+Superspeed operates in three intelligent modes—**Autocomplete**, **Generation**, and **Rewriting**—adapting its behavior based on what the user has typed. Each application gets its own specialized AI agent that understands the context and communication style appropriate for that app. The system learns from user feedback to personalize tone, format, and vocabulary over time.
 
-In V2, Helio evolves from a "thought partner" into an "action engine" by integrating external connectors (Jira, Fireflies, Google Drive, etc.) to pull real-time context into communications, and by adding multilingual support for global users.
+In V2, Superspeed evolves from a "thought partner" into an "action engine" by integrating external connectors (Jira, Fireflies, Google Drive, etc.) to pull real-time context into communications, and by adding multilingual support for global users.
 
 **Core Value Proposition:**  
 "The universal AI copilot for macOS—autocomplete your thoughts, generate your ideas, and rewrite your words, anywhere you type."
@@ -25,7 +25,7 @@ In V2, Helio evolves from a "thought partner" into an "action engine" by integra
 
 ## **2. Unique Positioning**
 
-### **What Makes Helio Different**
+### **What Makes Superspeed Different**
 
 **The Problem with Existing Tools:**
 - **Grammarly:** Editing-focused, not generative. System-wide but treats all apps the same. No connectors for external context.
@@ -33,7 +33,7 @@ In V2, Helio evolves from a "thought partner" into an "action engine" by integra
 - **GitHub Copilot:** Excellent ghost text UX, but code-only. Not system-wide.
 - **Superhuman/Notion Mail:** App-specific email AI. Not system-wide.
 
-**Helio's Unique Combination:**
+**Superspeed's Unique Combination:**
 1. **System-wide:** Works in every app, not locked to one interface
 2. **Multi-Agent:** 20+ specialized agents, each optimized for specific apps
 3. **Learning System:** Learns your tone, format, relationships, vocabulary
@@ -81,16 +81,16 @@ Mac power-users who live in multiple apps and value speed, efficiency, and quali
 
 **When limit is reached:**
 - Ghost text stops appearing
-- Dialog box appears: "Daily limit reached. Upgrade to Helio Pro for unlimited generations"
+- Dialog box appears: "Daily limit reached. Upgrade to Superspeed Pro for unlimited generations"
 
-### **Helio Pro (V1)**
+### **Superspeed Pro (V1)**
 - Everything in Free
 - **Unlimited generations per day**
 - **Pricing:**
   - $10/month (monthly billing)
   - $8/month ($96/year, annual billing—20% discount)
 
-### **Helio Pro (V2)**
+### **Superspeed Pro (V2)**
 - Everything in V1 Pro
 - **+ Connectors:** Integration with Google Drive, Jira, Fireflies, GitHub, Slack, Calendar, Notion, Linear, Dropbox, Asana (minimum 10)
 - **+ Multilingual Support:** Automatic translation in 5+ scenarios, Hinglish/slang support, 10+ languages
@@ -114,7 +114,7 @@ Mac power-users who live in multiple apps and value speed, efficiency, and quali
 
 ### **V1 Metrics**
 - **Activation Rate:** % of new users who accept at least one ghost text suggestion (Tab press) within first session
-- **Daily Active Users (DAU):** Users who trigger Helio at least once per day
+- **Daily Active Users (DAU):** Users who trigger Superspeed at least once per day
 - **Engagement:** Average number of accepted suggestions (Tab presses) per active user per day
 - **Retention:** Day 7, Day 30, Day 90 retention rates
 - **Mode Distribution:** % of usage split between Autocomplete / Generation / Rewriting
@@ -136,11 +136,11 @@ V1 delivers a flawless, zero-friction, system-wide AI copilot experience focused
 **Activation:**
 1. User presses a **keyboard shortcut** (default: `Cmd + Shift + Space`, customizable in Settings)
 2. User types naturally in any text field (Gmail, Slack, VS Code, Twitter, etc.)
-3. Helio automatically detects intent after a **3-second pause** when the user stops typing
+3. Superspeed automatically detects intent after a **3-second pause** when the user stops typing
 
 **Three Operating Modes:**
 
-Helio intelligently determines which mode to use based on the user's input:
+Superspeed intelligently determines which mode to use based on the user's input:
 
 | **Mode** | **User Input Type** | **Behavior** | **Ghost Text Position** | **Accept (`Tab`)** |
 |----------|---------------------|--------------|------------------------|-------------------|
@@ -205,7 +205,7 @@ User presses Tab → Casual text replaced with professional version
 
 ### **6.2. Multi-Agent Architecture**
 
-Helio uses a **specialized agent for every application** to ensure contextually perfect output.
+Superspeed uses a **specialized agent for every application** to ensure contextually perfect output.
 
 **Core Principle:**  
 Each agent has its own personality, tone guidelines, and output format optimized for the specific application it serves.
@@ -261,9 +261,9 @@ Each agent has its own personality, tone guidelines, and output format optimized
 
 ### **6.3. Adaptive Learning System**
 
-Helio learns from every `Tab` (accept) and `Esc` (reject) to personalize future suggestions.
+Superspeed learns from every `Tab` (accept) and `Esc` (reject) to personalize future suggestions.
 
-**What Helio Learns:**
+**What Superspeed Learns:**
 - **Tone:** Formal vs. casual, enthusiastic vs. neutral, friendly vs. direct
 - **Format:** Bullet points vs. paragraphs, long-form vs. brief, emoji usage
 - **Vocabulary:** Personal slang, industry jargon, technical terms, preferred phrases
@@ -296,12 +296,12 @@ Helio learns from every `Tab` (accept) and `Esc` (reject) to personalize future 
 
 ### **6.4. Voice Input (Secondary Input Method)**
 
-In addition to typing, users can activate Helio and speak their intent.
+In addition to typing, users can activate Superspeed and speak their intent.
 
 **How It Works:**
 1. User presses keyboard shortcut + speaks instead of typing
 2. Speech-to-text converts voice to text intent
-3. Helio processes normally and generates ghost text
+3. Superspeed processes normally and generates ghost text
 4. User still uses `Tab`/`Esc` to accept/reject
 
 **Use Cases:**
@@ -322,11 +322,11 @@ In addition to typing, users can activate Helio and speak their intent.
 
 ### **6.5. Universal Prompt Supercharger**
 
-A key use case for Helio is enhancing prompts for other AI tools.
+A key use case for Superspeed is enhancing prompts for other AI tools.
 
 **The Problem:** Most people write mediocre prompts to AI tools, resulting in mediocre outputs.
 
-**Helio's Solution:** When a user is in ChatGPT, Midjourney, Claude, or any AI interface, the relevant agent transforms simple, casual prompts into expert-level instructions.
+**Superspeed's Solution:** When a user is in ChatGPT, Midjourney, Claude, or any AI interface, the relevant agent transforms simple, casual prompts into expert-level instructions.
 
 **Example (Midjourney):**
 ```
@@ -348,18 +348,18 @@ ChatGPTAgent ghost text:
 User presses Tab → Much better response from ChatGPT
 ```
 
-**Positioning:** Helio is the "meta-AI"—the AI that makes you better at using other AIs.
+**Positioning:** Superspeed is the "meta-AI"—the AI that makes you better at using other AIs.
 
 ***
 
 ## **7. Core Features - V2 (The Action Engine)**
 
-V2 transforms Helio from a "thought partner" into an "action engine" by adding Connectors and Multilingual Support.
+V2 transforms Superspeed from a "thought partner" into an "action engine" by adding Connectors and Multilingual Support.
 
 ### **7.1. Connector Framework**
 
 **Core Principle:**  
-Connectors are **read-only**. They exist solely to pull contextual information into Helio's agents to enrich text generation. Helio will **never** perform actions (create tickets, send emails, modify files) in external applications.
+Connectors are **read-only**. They exist solely to pull contextual information into Superspeed's agents to enrich text generation. Superspeed will **never** perform actions (create tickets, send emails, modify files) in external applications.
 
 **What Connectors Do:**
 - Authenticate securely via OAuth (credentials stored in macOS Keychain)
@@ -373,7 +373,7 @@ Connectors are **read-only**. They exist solely to pull contextual information i
 
 **The Key Difference from Notion AI:**
 - **Notion AI Connectors:** Pull data into Notion for documentation and knowledge work
-- **Helio Connectors:** Pull data into real-time communication drafting across all apps
+- **Superspeed Connectors:** Pull data into real-time communication drafting across all apps
 
 ***
 
@@ -404,28 +404,28 @@ Connectors are **read-only**. They exist solely to pull contextual information i
 ### **7.3. Connector Behavior & User Experience**
 
 **Activation:**
-- **Automatic:** Helio intelligently decides which connectors to activate based on user intent
+- **Automatic:** Superspeed intelligently decides which connectors to activate based on user intent
   - Example: User mentions "the bug" → `JiraConnector` activates
   - Example: User mentions "last meeting" → `FirefliesConnector` activates
 - **Explicit:** User can specify a connector
-  - Text: `"helio + fireflies: draft email about bug"`
+  - Text: `"superspeed + fireflies: draft email about bug"`
   - Voice: "Find it in Fireflies"
 
 **User Experience:**
 - **Completely invisible:** No loading indicators, spinners, or notifications
 - Ghost text simply appears, enriched with connector data
-- User has no idea connectors are working in the background—it just feels like Helio is "smarter"
+- User has no idea connectors are working in the background—it just feels like Superspeed is "smarter"
 
 **Error Handling:**
 - If a connector fails (API down, authentication expired, no results found), a **small, non-intrusive popup** appears:
   - "Couldn't connect to Jira. Generated text without that context."
 - Popup auto-dismisses after 3 seconds
-- Helio generates the best possible text without that connector's data
+- Superspeed generates the best possible text without that connector's data
 
 **Privacy & Permissions:**
 - Users must explicitly connect each service via Settings
-- OAuth authentication (users log in directly to the service, not through Helio)
-- Helio only requests read-only permissions
+- OAuth authentication (users log in directly to the service, not through Superspeed)
+- Superspeed only requests read-only permissions
 - Users can disconnect services at any time
 
 ---
@@ -435,7 +435,7 @@ Connectors are **read-only**. They exist solely to pull contextual information i
 **Example 1: Email with Jira + Fireflies Context**
 ```
 Context: User is in Gmail
-User types: "helio: update john about the login bug"
+User types: "superspeed: update john about the login bug"
 [3-second pause]
 
 Behind the scenes:
@@ -460,7 +460,7 @@ User presses Tab → Email ready to send with zero manual lookup
 **Example 2: GitHub Issue with Meeting Context**
 ```
 Context: User is in GitHub issue description field
-User types: "helio: create issue for new feature discussed in design meeting"
+User types: "superspeed: create issue for new feature discussed in design meeting"
 [3-second pause]
 
 Behind the scenes:
@@ -492,7 +492,7 @@ User presses Tab → Issue created with all context, no copy-pasting
 **Example 3: Slack Message with Calendar Context**
 ```
 Context: User is in Slack
-User types: "helio: remind team about tomorrow's standup"
+User types: "superspeed: remind team about tomorrow's standup"
 [3-second pause]
 
 Behind the scenes:
@@ -512,18 +512,18 @@ User presses Tab → Message sent with exact details, no calendar lookup
 
 ### **7.5. Multilingual Support**
 
-Helio will support automatic language detection and translation across all three operating modes.
+Superspeed will support automatic language detection and translation across all three operating modes.
 
 **Core Principle:**  
-Helio detects both the **input language** (what the user types) and intelligently determines the **target language** (what the output should be) based on context.
+Superspeed detects both the **input language** (what the user types) and intelligently determines the **target language** (what the output should be) based on context.
 
 ***
 
 ### **Translation Scenarios**
 
-Helio supports five translation scenarios:
+Superspeed supports five translation scenarios:
 
-| **Scenario** | **User Input** | **Helio Output** | **Example** |
+| **Scenario** | **User Input** | **Superspeed Output** | **Example** |
 |-------------|----------------|------------------|-------------|
 | **1. Language → English** | User types in any language | Generates in English | User: मुझे मीटिंग कैंसल करनी है → Output: "I need to cancel the meeting" |
 | **2. English → Language** | User types in English | Generates in target language based on context | User: "draft meeting invite" → Output: मीटिंग का आमंत्रण (if context suggests Hindi) |
@@ -536,17 +536,17 @@ Helio supports five translation scenarios:
 ### **Automatic Language Detection**
 
 **How It Works:**
-1. **Input Detection:** When user types, Helio analyzes the language(s) used
-2. **Context Analysis:** Helio considers:
+1. **Input Detection:** When user types, Superspeed analyzes the language(s) used
+2. **Context Analysis:** Superspeed considers:
    - The application (WhatsApp = casual, LinkedIn = professional)
    - The detected input language
    - The communication context (formal vs. informal)
-3. **Target Language Selection:** Helio intelligently decides output language
+3. **Target Language Selection:** Superspeed intelligently decides output language
 
 **Key Behaviors:**
-- **No per-recipient memory:** Helio does NOT remember "Priya prefers Hindi." Instead, it detects the language the user types *in that moment*
-- **Dynamic switching:** If user normally writes in Hinglish but suddenly types pure English, Helio responds in English
-- **Mixing style preservation:** For slang languages like Hinglish, Helio preserves the user's Hindi-English mixing ratio
+- **No per-recipient memory:** Superspeed does NOT remember "Priya prefers Hindi." Instead, it detects the language the user types *in that moment*
+- **Dynamic switching:** If user normally writes in Hinglish but suddenly types pure English, Superspeed responds in English
+- **Mixing style preservation:** For slang languages like Hinglish, Superspeed preserves the user's Hindi-English mixing ratio
 
 **Example Scenarios:**
 
@@ -554,7 +554,7 @@ Helio supports five translation scenarios:
 ```
 User types: "bhai meeting 5pm pe hai reminder bhej"
 [3-second pause]
-Helio detects: Hinglish input, WhatsApp (casual context)
+Superspeed detects: Hinglish input, WhatsApp (casual context)
 Ghost text: "Bhai, reminder: meeting aaj 5pm pe hai. Don't forget!"
 ```
 
@@ -562,7 +562,7 @@ Ghost text: "Bhai, reminder: meeting aaj 5pm pe hai. Don't forget!"
 ```
 User types: [translate:क्लाइंट को अपडेट भेजना है]
 [3-second pause]
-Helio detects: Hindi input, Gmail (professional), needs English output
+Superspeed detects: Hindi input, Gmail (professional), needs English output
 Ghost text:
 "Hi [Client Name],
 
@@ -575,7 +575,7 @@ Best regards,"
 ```
 User types: "need to tell team about delay"
 [3-second pause]
-Helio detects: English input, Slack (team chat, casual)
+Superspeed detects: English input, Slack (team chat, casual)
 Ghost text: "Team, heads up – thoda delay ho raha hai project mein. Will keep you posted!"
 ```
 
@@ -604,9 +604,9 @@ Ghost text: "Team, heads up – thoda delay ho raha hai project mein. Will keep 
 
 ### **Slang & Code-Mixing Behavior**
 
-For languages like Hinglish (or Spanglish, Franglais in future), Helio will:
+For languages like Hinglish (or Spanglish, Franglais in future), Superspeed will:
 
-1. **Preserve Mixing Style:** If user writes with 80% Hindi / 20% English, Helio maintains similar ratio
+1. **Preserve Mixing Style:** If user writes with 80% Hindi / 20% English, Superspeed maintains similar ratio
 2. **Match Formality:** Casual Hinglish for friends, more formal Hindi for professional contexts
 3. **Vocabulary Learning:** Over time, learns user's preferred slang terms
 
@@ -627,15 +627,15 @@ Output: "Hey team, meeting postpone ho gayi hai, will update you with the new da
 
 **Autocomplete Mode:**
 - User types partial sentence in Hindi: मुझे लगता है कि हमें...
-- Helio completes in Hindi: प्रोजेक्ट की समीक्षा करनी चाहिए
+- Superspeed completes in Hindi: प्रोजेक्ट की समीक्षा करनी चाहिए
 
 **Generation Mode:**
 - User asks in Hinglish: "how to explain new feature to clients?"
-- Helio generates full response in appropriate language based on app context
+- Superspeed generates full response in appropriate language based on app context
 
 **Rewriting Mode:**
 - User types casual Hinglish: "bhai client ko update do"
-- Helio rewrites professionally in English: "Hi [Client], I wanted to update you on the current status..."
+- Superspeed rewrites professionally in English: "Hi [Client], I wanted to update you on the current status..."
 
 ***
 
@@ -643,7 +643,7 @@ Output: "Hey team, meeting postpone ho gayi hai, will update you with the new da
 
 - No language dropdown or selector UI
 - Fully automatic detection and generation
-- **Future consideration:** Manual override (e.g., `helio in hindi:`) if user demand is high
+- **Future consideration:** Manual override (e.g., `superspeed in hindi:`) if user demand is high
 
 ***
 
@@ -674,7 +674,7 @@ Output: "Hey team, meeting postpone ho gayi hai, will update you with the new da
 ### **8.4. Connector Integration**
 - RESTful API calls to third-party services
 - OAuth 2.0 for secure authentication
-- Credentials stored in macOS Keychain (never in Helio's servers)
+- Credentials stored in macOS Keychain (never in Superspeed's servers)
 - Rate limiting and caching to optimize API usage
 
 ### **8.5. Performance Targets**
@@ -691,7 +691,7 @@ Output: "Hey team, meeting postpone ho gayi hai, will update you with the new da
 "We follow Apple-level privacy. We learn the way you write, not what you write."
 
 ### **Data Principles**
-- Helio does **not** store the content of user communications
+- Superspeed does **not** store the content of user communications
 - Learning data is **anonymized and encrypted**
 - All connector API calls are **ephemeral** (no content caching beyond current session)
 - Users can **delete all learning data** at any time via Settings
@@ -713,7 +713,7 @@ Output: "Hey team, meeting postpone ho gayi hai, will update you with the new da
 
 ## **10. User Interface & Settings**
 
-While Helio is designed to be zero-configuration out of the box, there is a **minimal Settings panel** accessible via a menu bar icon.
+While Superspeed is designed to be zero-configuration out of the box, there is a **minimal Settings panel** accessible via a menu bar icon.
 
 ### **Settings Include:**
 
@@ -754,7 +754,7 @@ While Helio is designed to be zero-configuration out of the box, there is a **mi
 - Windows, Linux, or web versions
 - Mobile apps (iOS/iPadOS)
 - Team/enterprise features (shared learning, admin dashboards, team billing)
-- Helio performing actions in other apps (creating tickets, sending emails, modifying files)
+- Superspeed performing actions in other apps (creating tickets, sending emails, modifying files)
 - Browser extension (native app only)
 - Offline mode for AI inference (requires internet for V1/V2)
 
@@ -781,7 +781,7 @@ While Helio is designed to be zero-configuration out of the box, there is a **mi
   - Problem: Writing is slow, context-switching kills flow
   - Solution: Ghost text appears, Tab to accept
   - Show it in Gmail, Slack, VS Code
-  - End: "Download Helio. macOS only."
+  - End: "Download Superspeed. macOS only."
 - **Product Page:**
   - Clean landing page with download button
   - Feature highlights
@@ -819,7 +819,7 @@ While Helio is designed to be zero-configuration out of the box, there is a **mi
 - **LinkedIn:**
   - Professional angle: "Built a productivity tool in 1 month"
 - **Hacker News:**
-  - "Show HN: Helio – System-wide AI copilot for macOS"
+  - "Show HN: Superspeed – System-wide AI copilot for macOS"
 
 **Day 7: Reach Out to Influencers**
 - DM 10 Mac productivity YouTubers
@@ -960,7 +960,7 @@ While Helio is designed to be zero-configuration out of the box, there is a **mi
 1. What is the exact keyboard shortcut? (Avoid conflicts with system shortcuts)
 2. How to handle apps with custom text editors (VS Code Monaco, Notion block editor)?
 3. What is fallback if 3-second detection fails or feels too slow?
-4. Should there be a visual indicator when Helio is "thinking"?
+4. Should there be a visual indicator when Superspeed is "thinking"?
 
 ### **Next Steps (Immediate)**
 1. Finalize tech stack (Swift vs. Swift+Rust)
@@ -975,7 +975,7 @@ While Helio is designed to be zero-configuration out of the box, there is a **mi
 
 ### **Competitive Landscape Summary**
 
-| Feature | Grammarly | Notion AI | Copilot | Superhuman | **Helio** |
+| Feature | Grammarly | Notion AI | Copilot | Superhuman | **Superspeed** |
 |---------|-----------|-----------|---------|------------|-----------|
 | System-wide | ✅ | ❌ | ❌ | ❌ | ✅ |
 | Per-app agents | ❌ | ❌ | ❌ | ❌ | ✅ |
@@ -985,7 +985,7 @@ While Helio is designed to be zero-configuration out of the box, there is a **mi
 | Voice input | ❌ | ❌ | ❌ | ❌ | ✅ |
 | Multilingual | ✅ | ✅ | ✅ | ❌ | ✅ (V2) |
 
-**Helio is the only product combining all of these features.**
+**Superspeed is the only product combining all of these features.**
 
 ---
 

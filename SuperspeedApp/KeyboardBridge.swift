@@ -1,6 +1,6 @@
 //
 //  KeyboardBridge.swift
-//  Helio
+//  Superspeed
 //
 //  Swift ↔ Rust FFI Bridge
 //
@@ -8,7 +8,7 @@
 import Foundation
 
 // Declare Rust function (C ABI)
-@_silgen_name("helio_insert_ghost_text")
+@_silgen_name("superspeed_insert_ghost_text")
 private func _rust_insert_ghost_text(_: UnsafePointer<CChar>) -> Bool
 
 /// Swift wrapper for Rust keyboard simulation functions

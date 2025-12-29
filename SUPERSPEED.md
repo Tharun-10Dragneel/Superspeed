@@ -1,10 +1,10 @@
-# Helio - AI Communication Copilot
+# Superspeed - AI Communication Copilot
 
 ## Core Problem
 
 **"I know WHAT to say but not HOW to say it"**
 
-Helio solves the gap between intent and perfect communication. Users struggle with:
+Superspeed solves the gap between intent and perfect communication. Users struggle with:
 - **Tone**: Professional vs casual, formal vs friendly
 - **Format**: Email vs Slack vs terminal commands
 - **Audience**: Boss vs colleague vs client vs AI tools
@@ -14,7 +14,7 @@ Helio solves the gap between intent and perfect communication. Users struggle wi
 
 ---
 
-## How Helio Works
+## How Superspeed Works
 
 ### 1. User Provides Complete Intent + Context
 
@@ -137,7 +137,7 @@ Input (Hindi via "Hey Ito"): "योज भाई को मैसेज भे�
 ITO Output: Sometimes Hindi email, sometimes English, inconsistent
 ```
 
-**Helio Solution:**
+**Superspeed Solution:**
 
 1. **Automatic input language detection**: Detect Hindi, Hinglish, English, etc.
 2. **Explicit output language control**: User sets per app/recipient
@@ -250,9 +250,9 @@ Learning System (tracks feedback)
 
 ---
 
-## Helio vs ITO (Validated 2025-10-25)
+## Superspeed vs ITO (Validated 2025-10-25)
 
-| Feature | ITO | Helio |
+| Feature | ITO | Superspeed |
 |---------|-----|-------|
 | **Core purpose** | Voice dictation with cleanup | Intent → Perfect communication |
 | **Problem solved** | Faster than typing | "Know WHAT to say, not HOW" |
@@ -272,19 +272,19 @@ Learning System (tracks feedback)
 
 1. **Language Control** (BIGGEST GAP):
    - **ITO:** Speak Hindi → unpredictable output (sometimes Hindi, sometimes English, takes 5-6 tries)
-   - **Helio:** Speak Hindi → guaranteed English output for work, Hindi for family
+   - **Superspeed:** Speak Hindi → guaranteed English output for work, Hindi for family
 
 2. **Preview & Control**:
    - **ITO:** Immediately pastes, no preview, no undo
-   - **Helio:** Ghost text preview → Tab/Esc to accept/reject → infinite regenerations
+   - **Superspeed:** Ghost text preview → Tab/Esc to accept/reject → infinite regenerations
 
 3. **Input Flexibility**:
    - **ITO:** Voice only (user types fast, doesn't always want voice)
-   - **Helio:** Text OR Voice (3 modes for different contexts)
+   - **Superspeed:** Text OR Voice (3 modes for different contexts)
 
 4. **Consistency**:
    - **ITO:** Inconsistent formatting (sometimes email, sometimes message)
-   - **Helio:** App-specific agents guarantee correct format every time
+   - **Superspeed:** App-specific agents guarantee correct format every time
 
 ---
 
@@ -320,7 +320,7 @@ Learning System (tracks feedback)
 - **MacWhisper**: Local transcription (one-time $35)
 - **ITO**: Open source voice dictation (GPL v3)
 
-### Gap Helio Fills (Validated)
+### Gap Superspeed Fills (Validated)
 
 **No existing tool provides:**
 
@@ -337,7 +337,7 @@ Learning System (tracks feedback)
 3. **Text + Voice input**:
    - Fast typers don't always want voice
    - Existing tools force one or the other
-   - Helio supports both seamlessly
+   - Superspeed supports both seamlessly
 
 4. **App-specific optimization**:
    - No tool optimizes for Cursor, Claude Code, Terminal

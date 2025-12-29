@@ -1,13 +1,13 @@
 //
-//  HelioUITestsLaunchTests.swift
-//  HelioUITests
+//  SuperspeedUITestsLaunchTests.swift
+//  SuperspeedUITests
 //
 //  Created by hak on 04/10/25.
 //
 
 import XCTest
 
-final class HelioUITestsLaunchTests: XCTestCase {
+final class SuperspeedUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true

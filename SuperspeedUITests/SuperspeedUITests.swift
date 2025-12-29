@@ -1,13 +1,13 @@
 //
-//  HelioUITests.swift
-//  HelioUITests
+//  SuperspeedUITests.swift
+//  SuperspeedUITests
 //
 //  Created by hak on 04/10/25.
 //
 
 import XCTest
 
-final class HelioUITests: XCTestCase {
+final class SuperspeedUITests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

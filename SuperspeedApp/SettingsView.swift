@@ -3,7 +3,7 @@ import SwiftUI
 struct SettingsView: View {
     @AppStorage("claudeAPIKey") private var claudeAPIKey = ""
     @AppStorage("pauseDelay") private var pauseDelay = 3.0
-    @AppStorage("enableHelio") private var enableHelio = true
+    @AppStorage("enableSuperspeed") private var enableSuperspeed = true
 
     @State private var acceptCount = 0
     @State private var rejectCount = 0
@@ -12,12 +12,12 @@ struct SettingsView: View {
     var body: some View {
         Form {
             Section(header: Text("General")) {
-                Toggle("Enable Helio system-wide", isOn: $enableHelio)
-                    .onChange(of: enableHelio) { newValue in
+                Toggle("Enable Superspeed system-wide", isOn: $enableSuperspeed)
+                    .onChange(of: enableSuperspeed) { newValue in
                         if newValue {
-                            HelioTextMode.shared.start()
+                            SuperspeedTextMode.shared.start()
                         } else {
-                            HelioTextMode.shared.stop()
+                            SuperspeedTextMode.shared.stop()
                         }
                     }
 
@@ -67,7 +67,7 @@ struct SettingsView: View {
 
             Section(header: Text("Usage")) {
                 VStack(alignment: .leading, spacing: 8) {
-                    Text("• Press Fn once to activate Helio")
+                    Text("• Press Fn once to activate Superspeed")
                     Text("• Type your intent in any app")
                     Text("• Wait 3 seconds → Ghost text appears")
                     Text("• Tab = Accept | Esc = Reject & Regenerate")

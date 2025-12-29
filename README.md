@@ -5,7 +5,7 @@ Cresecent helps you transform your intent into perfectly-crafted messages using 
 ## Phase 1 Features (Implemented)
 
 ### Core Functionality
-- ✅ **Fn Key Toggle** - Press Fn once to activate/deactivate Helio (Crescent Mode)
+- ✅ **Fn Key Toggle** - Press Fn once to activate/deactivate Superspeed (Crescent Mode)
 - ✅ **3-Second Pause Detection** - Automatically triggers ghost text generation
 - ✅ **Ghost Text Preview** - AI-generated text appears with blank line separator
 - ✅ **Tab/Esc Controls** - Tab to accept, Esc to reject and regenerate
@@ -22,7 +22,7 @@ Cresecent helps you transform your intent into perfectly-crafted messages using 
 - ✅ **SQLite Database** - Local-only data storage (privacy-first)
 - ✅ **Accept/Reject Tracking** - Logs all interactions
 - ✅ **Statistics** - View accept rate and usage metrics
-- ✅ **App Detection** - Tracks which apps you use Helio in
+- ✅ **App Detection** - Tracks which apps you use Superspeed in
 
 ## Installation & Setup
 
@@ -35,8 +35,8 @@ Cresecent helps you transform your intent into perfectly-crafted messages using 
 
 1. **Clone/Open the project**
    ```bash
-   cd /Users/hak/projects/Helio
-   open Helio.xcodeproj
+   cd /Users/hak/projects/Superspeed
+   open Superspeed.xcodeproj
    ```
 
 2. **Add new files to Xcode**
@@ -50,14 +50,14 @@ Cresecent helps you transform your intent into perfectly-crafted messages using 
    - Grant Input Monitoring permissions when prompted
 
 4. **Configure API Key**
-   - Click Helio icon in menu bar
+   - Click Superspeed icon in menu bar
    - Select "Settings..."
    - Paste your Claude API key
    - Close settings window
 
 ### Required Permissions
 
-Helio requires these macOS permissions:
+Superspeed requires these macOS permissions:
 
 1. **Accessibility** - To monitor keyboard input and detect typing pauses
 2. **Input Monitoring** - To capture Fn key presses and Tab/Esc actions
@@ -72,16 +72,16 @@ Helio requires these macOS permissions:
 If the app doesn't prompt you automatically:
 
 1. Open **System Settings** → **Privacy & Security** → **Accessibility**
-2. Click the **+** button and add Helio
+2. Click the **+** button and add Superspeed
 3. Open **System Settings** → **Privacy & Security** → **Input Monitoring**
-4. Enable Helio
+4. Enable Superspeed
 
 ## How to Use
 
 ### Basic Workflow
 
-1. **Activate Helio**
-   - Press **Fn** key once (or click menu bar → "Enable Helio")
+1. **Activate Superspeed**
+   - Press **Fn** key once (or click menu bar → "Enable Superspeed")
 
 2. **Type your intent** in any app
    - Example: "send message to john about meeting tomorrow"
@@ -98,13 +98,13 @@ If the app doesn't prompt you automatically:
    - Press **Tab** to accept (intent deleted, ghost text stays)
    - Press **Esc** to reject and regenerate (new version appears after 3s)
 
-5. **Helio auto-disables** after you accept/reject
+5. **Superspeed auto-disables** after you accept/reject
 
 ### Settings
 
 - **Claude API Key** - Required for AI generation
 - **Pause Detection Delay** - Adjust from 1-10 seconds (default: 3s)
-- **Enable Helio system-wide** - Toggle on/off
+- **Enable Superspeed system-wide** - Toggle on/off
 
 ### Statistics
 
@@ -117,8 +117,8 @@ View your usage metrics in Settings:
 
 ### Components
 
-- **HelioApp.swift** - App entry point, menu bar setup, AppDelegate
-- **ContentView.swift** - Main logic, HelioTextMode manager, NetworkManager
+- **SuperspeedApp.swift** - App entry point, menu bar setup, AppDelegate
+- **ContentView.swift** - Main logic, SuperspeedTextMode manager, NetworkManager
 - **SettingsView.swift** - Settings UI with statistics
 - **DatabaseManager.swift** - SQLite database for logging interactions
 
@@ -168,7 +168,7 @@ These will be added in Phase 2 and beyond.
 ### Test in TextEdit
 
 1. Open TextEdit (or any text app)
-2. Press Fn to activate Helio
+2. Press Fn to activate Superspeed
 3. Type: "write email to boss about vacation request"
 4. Wait 3 seconds
 5. Ghost text should appear
@@ -176,7 +176,7 @@ These will be added in Phase 2 and beyond.
 
 ### Test in Multiple Apps
 
-Try Helio in:
+Try Superspeed in:
 - Gmail (web browser)
 - Slack (desktop app)
 - Messages
@@ -205,7 +205,7 @@ Try Helio in:
 
 Learning data is stored locally at:
 ```
-~/Library/Application Support/Helio/helio.db
+~/Library/Application Support/Superspeed/superspeed.db
 ```
 
 You can clear all data from Settings → "Clear All Learning Data"
@@ -213,7 +213,7 @@ You can clear all data from Settings → "Clear All Learning Data"
 ## Success Metrics (Phase 1)
 
 According to the PRD:
-- **Primary:** User uses Helio for 1 week, reduces email editing time by >60%
+- **Primary:** User uses Superspeed for 1 week, reduces email editing time by >60%
 - **Accept rate:** >70% (ghost text accepted without regeneration)
 - **Regenerations:** <2 per intent on average
 
@@ -241,4 +241,4 @@ This is a personal project for Phase 1 validation. After successful testing with
 
 ---
 
-**Built according to [HELIO_PRD.md](HELIO_PRD.md) Phase 1 specification**
+**Built according to [SUPERSPEED_PRD.md](SUPERSPEED_PRD.md) Phase 1 specification**

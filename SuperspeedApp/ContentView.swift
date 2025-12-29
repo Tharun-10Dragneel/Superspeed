@@ -9,7 +9,7 @@ struct ContentView: View {
 
     var body: some View {
         VStack(spacing: 20) {
-            Text("Helio Text Mode Test")
+            Text("Superspeed Text Mode Test")
                 .font(.title)
 
             VStack(alignment: .leading, spacing: 10) {
@@ -35,7 +35,7 @@ struct ContentView: View {
 
             Button("Test Toggle (Local)") {
                 print("🔵 Manual toggle button pressed")
-                HelioTextMode.shared.manualToggle()
+                SuperspeedTextMode.shared.manualToggle()
             }
 
             if !testLog.isEmpty {
@@ -53,7 +53,7 @@ struct ContentView: View {
 
             .onAppear {
                 print("🔵 App launched! ContentView appeared")
-                print("🔵 Attempting to start HelioTextMode...")
+                print("🔵 Attempting to start SuperspeedTextMode...")
                 checkPermissionsManually()
                 setupLocalHotkey()
             }
@@ -68,7 +68,7 @@ struct ContentView: View {
             if event.modifierFlags.contains([.command, .shift]) && event.keyCode == 17 {
                 print("🔵 LOCAL Cmd+Shift+T detected!")
                 testLog = "Cmd+Shift+T pressed at \(Date())"
-                HelioTextMode.shared.manualToggle()
+                SuperspeedTextMode.shared.manualToggle()
                 return nil // Consume event
             }
             return event
@@ -85,7 +85,7 @@ struct ContentView: View {
             print("✅ Accessibility permission GRANTED")
             statusMessage = "✅ Ready! Press Cmd+Shift+T to start"
             isPermissionGranted = true
-            HelioTextMode.shared.start()
+            SuperspeedTextMode.shared.start()
         } else {
             print("❌ Accessibility permission DENIED")
             statusMessage = "❌ Need Accessibility permission - Click 'Open System Settings'"
@@ -94,9 +94,9 @@ struct ContentView: View {
     }
 }
 
-// MARK: - Helio Text Mode Manager
-class HelioTextMode {
-    static let shared = HelioTextMode()
+// MARK: - Superspeed Text Mode Manager
+class SuperspeedTextMode {
+    static let shared = SuperspeedTextMode()
 
     var isActive = false  // Made public for AppDelegate
     private var lastTypingTime: Date?
@@ -109,7 +109,7 @@ class HelioTextMode {
     private var lastFnKeyState = false // Debounce Fn key
     
     func start() {
-        print("🔵 HelioTextMode.start() called")
+        print("🔵 SuperspeedTextMode.start() called")
         guard checkPermissions() else {
             print("❌ Permissions check failed in start()")
             return
@@ -117,11 +117,11 @@ class HelioTextMode {
         print("✅ Permissions OK, setting up listeners...")
         setupFnKeyListener()
         setupTestHotkey()
-        print("✅ Helio Text Mode ready. Press Cmd+Shift+T (or Fn) to activate.")
+        print("✅ Superspeed Text Mode ready. Press Cmd+Shift+T (or Fn) to activate.")
     }
 
     func stop() {
-        print("🔴 HelioTextMode.stop() called")
+        print("🔴 SuperspeedTextMode.stop() called")
         isActive = false
         stopTypingDetection()
     }
@@ -180,7 +180,7 @@ class HelioTextMode {
             eventsOfInterest: CGEventMask(eventMask),
             callback: { _, _, event, refcon in
                 guard let refcon = refcon else { return Unmanaged.passRetained(event) }
-                let manager = Unmanaged<HelioTextMode>.fromOpaque(refcon).takeUnretainedValue()
+                let manager = Unmanaged<SuperspeedTextMode>.fromOpaque(refcon).takeUnretainedValue()
                 return manager.onKeyPress(event: event)
             },
             userInfo: UnsafeMutableRawPointer(Unmanaged.passUnretained(self).toOpaque())

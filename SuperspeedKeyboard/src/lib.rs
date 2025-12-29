@@ -1,4 +1,4 @@
-// Helio Keyboard - Rust Library for Low-Level Keyboard Simulation
+// Superspeed Keyboard - Rust Library for Low-Level Keyboard Simulation
 //
 // This library provides ONLY low-level system operations:
 // - Keyboard event simulation (Shift+Enter, Cmd+V)
@@ -22,7 +22,7 @@ use std::time::Duration;
 ///
 /// Returns true on success, false on failure.
 #[no_mangle]
-pub extern "C" fn helio_insert_ghost_text(text_ptr: *const c_char) -> bool {
+pub extern "C" fn superspeed_insert_ghost_text(text_ptr: *const c_char) -> bool {
     // Convert C string to Rust string
     let text = unsafe {
         if text_ptr.is_null() {

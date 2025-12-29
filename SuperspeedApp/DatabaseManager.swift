@@ -11,12 +11,12 @@ class DatabaseManager {
         // Store database in Application Support directory
         let fileManager = FileManager.default
         let appSupport = fileManager.urls(for: .applicationSupportDirectory, in: .userDomainMask).first!
-        let helioDir = appSupport.appendingPathComponent("Helio", isDirectory: true)
+        let superspeedDir = appSupport.appendingPathComponent("Superspeed", isDirectory: true)
 
         // Create directory if it doesn't exist
-        try? fileManager.createDirectory(at: helioDir, withIntermediateDirectories: true)
+        try? fileManager.createDirectory(at: superspeedDir, withIntermediateDirectories: true)
 
-         dbPath = helioDir.appendingPathComponent("helio.db").path
+         dbPath = superspeedDir.appendingPathComponent("superspeed.db").path
         print("📁 Database path: \(dbPath)")
 
         openDatabase()
