@@ -6,7 +6,7 @@
 // If you built a static library:
 //   lib name -> libsuperspeed_keyboard.a      => link "superspeed_keyboard"
 
-module HelioKeyboard [system] {
+module SuperspeedKeyboard [system] {
   header "superspeed_keyboard.h"
   link "superspeed_keyboard"
   export *

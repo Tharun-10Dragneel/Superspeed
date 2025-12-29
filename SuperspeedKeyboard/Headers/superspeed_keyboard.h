@@ -1,8 +1,8 @@
-// helio_keyboard.h
+// superspeed_keyboard.h
 // Public C API exported by the Rust cdylib/staticlib.
 
-#ifndef HELIO_KEYBOARD_H
-#define HELIO_KEYBOARD_H
+#ifndef SUPERSPEED_KEYBOARD_H
+#define SUPERSPEED_KEYBOARD_H
 
 #include <stdbool.h>
 
@@ -14,10 +14,10 @@ extern "C" {
 // Returns true on success, false on failure.
 // IMPORTANT: Call from the main thread (NSPasteboard is not thread-safe).
 // V2: Renamed to break stale linkage
-bool helio_insert_ghost_text_v2(const char *text);
+bool superspeed_insert_ghost_text_v2(const char *text);
 
 #ifdef __cplusplus
 }
 #endif
 
-#endif // HELIO_KEYBOARD_H
+#endif // SUPERSPEED_KEYBOARD_H

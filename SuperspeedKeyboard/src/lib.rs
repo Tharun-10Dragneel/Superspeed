@@ -9,7 +9,7 @@ use std::time::Duration;
 
 /// FFI entry: insert ghost text in an app-aware manner
 #[no_mangle]
-pub extern "C" fn helio_insert_ghost_text_v2(text_ptr: *const c_char) -> bool {
+pub extern "C" fn superspeed_insert_ghost_text_v2(text_ptr: *const c_char) -> bool {
     let text = unsafe {
         if text_ptr.is_null() {
             eprintln!("Null text pointer");
