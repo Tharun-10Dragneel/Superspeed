@@ -1,8 +1,10 @@
-# Xcode
-#
-# gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+.claude/
 
-## User settings
+# Xcode
 xcuserdata/
 
 ## Compatibility with Xcode 8 and earlier (ignoring not required starting Xcode 9)
@@ -48,6 +50,7 @@ playground.xcworkspace
 # .swiftpm
 
 .build/
+.swiftpm/
 
 # CocoaPods
 #
@@ -61,13 +64,10 @@ playground.xcworkspace
 # *.xcworkspace
 
 # Carthage
-#
-# Add this line if you want to avoid checking in source code from Carthage dependencies.
-# Carthage/Checkouts
-
+Carthage/Checkouts
 Carthage/Build/
 
-# Accio dependency management
+# Accio
 Dependencies/
 .accio/
 
@@ -96,3 +96,125 @@ iOSInjectionProject/
 # ITO directory (external project)
 ito/
 ito-dev/
+# Rust
+target/
+**/*.rs.bk
+Cargo.lock
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Xcode
+build/
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata/
+*.xccheckout
+*.moved-aside
+DerivedData/
+*.hmap
+*.ipa
+*.xcuserstate
+
+# Swift Package Manager
+.build/
+
+# Node/Electron (from ito)
+node_modules/
+dist/
+out/
+.env
+.env.local
+
+# Python (AgentService) - Only ignore compiled/cache files, NOT source .py files!
+__pycache__/
+*.py[cod]        # Ignores .pyc, .pyo, .pyd (bytecode) but NOT .py (source)
+*$py.class
+*.so
+.Python
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.venv/
+
+# Python Testing
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+
+# Python Distribution
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Environment Variables
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Logs
+*.log
+process_log.txt
+
+# Note: We DO track .py (Python source) and .md/.txt (documentation)
+# Only compiled Python (.pyc, .pyo) and temp files are ignored
+process_log.txt
+
+# Node/Electron (from ito)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+dist/
+out/
+
+# ITO directory (external project - if you want to ignore it entirely)
+ito/
+ito-dev/
+boring.notch-main/
+
+# Remove the AgentService .gitignore (use this main one)
+AgentService/.gitignore

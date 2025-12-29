@@ -15,8 +15,7 @@ struct ContentView: View {
             VStack(alignment: .leading, spacing: 10) {
                 Text("Instructions:").bold()
                 Text("1. Grant Accessibility + Input Monitoring permissions")
-                Text("2. Press Cmd+Shift+T anywhere to toggle text mode")
-                Text("   (or use Fn key if configured)")
+                Text("2. Press Fn key anywhere to toggle text mode")
                 Text("3. Start typing in any app (TextEdit, Notes, etc.)")
                 Text("4. Stop → Ghost text appears after 3s")
                 Text("5. Tab = Accept | Esc = Reject & Regenerate")
@@ -33,8 +32,8 @@ struct ContentView: View {
                 checkPermissionsManually()
             }
 
-            Button("Test Toggle (Local)") {
-                print("🔵 Manual toggle button pressed")
+            Button("Test Toggle (Fn Key)") {
+                print("🔵 Manual toggle button pressed (simulating Fn key)")
                 HelioTextMode.shared.manualToggle()
             }
 
@@ -63,17 +62,18 @@ struct ContentView: View {
     }
 
     func setupLocalHotkey() {
-        // Local event monitor works when app is focused
-        NSEvent.addLocalMonitorForEvents(matching: .keyDown) { event in
-            if event.modifierFlags.contains([.command, .shift]) && event.keyCode == 17 {
-                print("🔵 LOCAL Cmd+Shift+T detected!")
-                testLog = "Cmd+Shift+T pressed at \(Date())"
+        // Local event monitor for Fn key (keyCode 63) works when app is focused
+        NSEvent.addLocalMonitorForEvents(matching: .flagsChanged) { event in
+            // Fn key has keyCode 63
+            if event.keyCode == 63 && event.modifierFlags.contains(.function) {
+                print("🔵 LOCAL Fn key detected!")
+                testLog = "Fn key pressed at \(Date())"
                 HelioTextMode.shared.manualToggle()
                 return nil // Consume event
             }
             return event
         }
-        print("✅ Local hotkey monitor added")
+        print("✅ Local Fn key monitor added")
     }
 
     func checkPermissionsManually() {
@@ -83,7 +83,7 @@ struct ContentView: View {
 
         if hasPermission {
             print("✅ Accessibility permission GRANTED")
-            statusMessage = "✅ Ready! Press Cmd+Shift+T to start"
+            statusMessage = "✅ Ready! Press Fn key to start"
             isPermissionGranted = true
             HelioTextMode.shared.start()
         } else {
@@ -116,8 +116,7 @@ class HelioTextMode {
         }
         print("✅ Permissions OK, setting up listeners...")
         setupFnKeyListener()
-        setupTestHotkey()
-        print("✅ Helio Text Mode ready. Press Cmd+Shift+T (or Fn) to activate.")
+        print("✅ Helio Text Mode ready. Press Fn key to activate.")
     }
 
     func stop() {
@@ -127,31 +126,23 @@ class HelioTextMode {
     }
 
     private func setupFnKeyListener() {
-        print("🔧 Setting up Fn key listener...")
+        print("🔧 Setting up Fn key listener (keyCode 63)...")
+        // Modern 2025 approach: Use .flagsChanged with keyCode 63 for Fn key
         fnKeyMonitor = NSEvent.addGlobalMonitorForEvents(matching: .flagsChanged) { event in
-            let isFnPressed = event.modifierFlags.contains(.function)
-
-            // Only toggle on Fn press (not release) to prevent double-trigger
-            if isFnPressed && !self.lastFnKeyState {
-                print("🔵 Fn key detected!")
-                self.toggleTextMode()
+            // Fn key is keyCode 63
+            if event.keyCode == 63 && event.modifierFlags.contains(.function) {
+                // Only toggle on Fn press (not release) to prevent double-trigger
+                if !self.lastFnKeyState {
+                    print("🔵 Fn key pressed (global)!")
+                    self.toggleTextMode()
+                }
+                self.lastFnKeyState = true
+            } else if event.keyCode == 63 {
+                // Fn key released
+                self.lastFnKeyState = false
             }
-            self.lastFnKeyState = isFnPressed
         }
         print("✅ Fn key listener set up")
-    }
-
-    private func setupTestHotkey() {
-        print("🔧 Setting up Cmd+Shift+T hotkey...")
-        // Add Cmd+Shift+T hotkey for easy testing
-        NSEvent.addGlobalMonitorForEvents(matching: .keyDown) { event in
-            // Check for Cmd+Shift+T (keyCode 17 = 'T')
-            if event.modifierFlags.contains([.command, .shift]) && event.keyCode == 17 {
-                print("🔵 Cmd+Shift+T detected!")
-                self.toggleTextMode()
-            }
-        }
-        print("✅ Test hotkey listener set up")
     }
     
     func manualToggle() {
@@ -281,6 +272,11 @@ class HelioTextMode {
 
         if success {
             print("✅ Dummy ghost text inserted via Rust!")
+            
+            // Rust only does layout now (Shift+Enter x2)
+            // Swift handles the actual paste
+            injectTextWithClipboard(text: dummyText)
+            
             // isGenerating stays true until user accepts/rejects
         } else {
             print("❌ Failed to insert ghost text via Rust")
@@ -471,7 +467,7 @@ func injectTextWithClipboard(text: String) {
     keyUp?.post(tap: .cghidEventTap)
 
     // 6. Wait for paste to complete
-    Thread.sleep(forTimeInterval: 0.5)
+    Thread.sleep(forTimeInterval: 1.0)
 
     // 7. Restore original clipboard
     if let saved = savedClipboard {

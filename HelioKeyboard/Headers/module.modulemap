@@ -1,0 +1,13 @@
+// module.modulemap
+// Expose the C header as a Swift module and link the Rust library.
+//
+// If you built a dynamic library (recommended):
+//   lib name -> libhelio_keyboard.dylib  => link "helio_keyboard"
+// If you built a static library:
+//   lib name -> libhelio_keyboard.a      => link "helio_keyboard"
+
+module HelioKeyboard [system] {
+  header "helio_keyboard.h"
+  link "helio_keyboard"
+  export *
+}
