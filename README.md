@@ -228,10 +228,6 @@ After Phase 1 validation:
 - Build preference learning algorithm
 - Improve regeneration with previous version context
 
-## Contributing
-
-This is a personal project for Phase 1 validation. After successful testing with initial users, it may be open-sourced.
-
 ## Privacy
 
 - All data stored **locally only** (SQLite database)
