@@ -26,7 +26,7 @@ struct User: Codable, Identifiable {
         let referralSource: String?
         let onboardingCompleted: Bool?
 
-        enum CodingKeys: String, CodingKeys {
+        enum CodingKeys: String, CodingKey {
             case referralSource = "referral_source"
             case onboardingCompleted = "onboarding_completed"
         }
