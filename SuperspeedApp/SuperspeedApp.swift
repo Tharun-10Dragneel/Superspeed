@@ -13,16 +13,14 @@ struct SuperspeedApp: App {
     @AppStorage("onboardingCompleted") var onboardingCompleted: Bool = false
 
     var body: some Scene {
-        // Onboarding window (shown only when onboarding not completed)
-        WindowGroup("Superspeed Onboarding") {
+        // Main window
+        WindowGroup("Superspeed") {
             if !onboardingCompleted {
                 OnboardingCoordinator()
                     .frame(minWidth: 900, minHeight: 600)
                     .frame(maxWidth: 900, maxHeight: 600)
             } else {
-                // Show empty view if onboarding is completed
-                // Main app is menu bar only
-                EmptyView()
+                DashboardView()
             }
         }
         .windowStyle(.hiddenTitleBar)
@@ -42,17 +40,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var settingsWindow: NSWindow?
 
     func applicationDidFinishLaunching(_ notification: Notification) {
-        // Check if onboarding is completed
-        let onboardingCompleted = UserDefaults.standard.bool(forKey: "onboardingCompleted")
-
-        if !onboardingCompleted {
-            // Show onboarding window on first launch
-            NSApp.setActivationPolicy(.regular)
-            NSApp.activate(ignoringOtherApps: true)
-        } else {
-            // Set as accessory app (menu bar only)
-            NSApp.setActivationPolicy(.accessory)
-        }
+        // Always show as regular app (with window in Dock)
+        NSApp.setActivationPolicy(.regular)
+        NSApp.activate(ignoringOtherApps: true)
 
         statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
 
@@ -70,14 +60,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
         statusItem?.menu = menu
 
-        // Only start Superspeed if onboarding is completed
-        if onboardingCompleted {
-            SuperspeedTextMode.shared.start()
-        }
+        // TODO: Start SuperspeedTextMode when available
+        // SuperspeedTextMode.shared.start()
     }
 
     @objc func toggleSuperspeed() {
-        SuperspeedTextMode.shared.manualToggle()
+        // TODO: Toggle SuperspeedTextMode
+        // SuperspeedTextMode.shared.manualToggle()
         updateMenuText()
     }
 
@@ -94,7 +83,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func updateMenuText() {
         if let menu = statusItem?.menu,
            let item = menu.item(at: 0) {
-            item.title = SuperspeedTextMode.shared.isActive ? "Disable Superspeed" : "Enable Superspeed"
+            // TODO: Update based on SuperspeedTextMode state
+            item.title = "Toggle Superspeed"
         }
     }
 }

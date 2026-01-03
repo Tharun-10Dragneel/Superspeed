@@ -17,10 +17,11 @@ struct CreateAccountView: View {
     @State private var showEmailForm: Bool = false
 
     var body: some View {
-        HStack(spacing: 0) {
-            // Left Column - Sign up form
-            VStack(alignment: .leading, spacing: 24) {
-                Spacer()
+        ZStack {
+            HStack(spacing: 0) {
+                // Left Column - Sign up form
+                VStack(alignment: .leading, spacing: 24) {
+                    Spacer()
 
                 // Logo and title
                 VStack(alignment: .leading, spacing: 16) {
@@ -203,6 +204,28 @@ struct CreateAccountView: View {
                     .frame(width: 2),
                 alignment: .leading
             )
+            }
+
+            // Debug skip button
+            VStack {
+                HStack {
+                    Spacer()
+                    Button(action: {
+                        onboardingState.completeOnboarding()
+                    }) {
+                        Text("Skip to Dashboard")
+                            .font(.system(size: 12, weight: .medium))
+                            .foregroundColor(.white)
+                            .padding(.horizontal, 12)
+                            .padding(.vertical, 6)
+                            .background(Color.red.opacity(0.8))
+                            .cornerRadius(6)
+                    }
+                    .buttonStyle(PlainButtonStyle())
+                    .padding()
+                }
+                Spacer()
+            }
         }
     }
 
