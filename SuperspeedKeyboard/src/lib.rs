@@ -4,10 +4,14 @@ pub mod keyboard {
 }
 
 use std::ffi::{CStr, c_char};
-use std::thread;
-use std::time::Duration;
+use std::sync::Mutex;
 
-/// FFI entry: insert ghost text in an app-aware manner
+// Global state to track ghost text and old clipboard
+static OLD_CLIPBOARD: Mutex<Option<String>> = Mutex::new(None);
+static GHOST_TEXT_LENGTH: Mutex<usize> = Mutex::new(0);
+
+/// FFI: Insert ghost text (Shift+Enter x2 + paste)
+/// Saves old clipboard for later restore
 #[no_mangle]
 pub extern "C" fn superspeed_insert_ghost_text_v2(text_ptr: *const c_char) -> bool {
     let text = unsafe {
@@ -18,44 +22,96 @@ pub extern "C" fn superspeed_insert_ghost_text_v2(text_ptr: *const c_char) -> bo
         CStr::from_ptr(text_ptr).to_string_lossy().into_owned()
     };
 
-    eprintln!("Rust: Entry point reached with text: '{}'", text);
+    eprintln!("Rust: Insert ghost text: '{}'", text);
 
-    // Only do layout if text is not empty (empty string = testing layout only)
-    if !text.is_empty() {
-        // Step 1: Create layout (Shift+Enter x2)
-        eprintln!("Rust: Creating layout (Shift+Enter x2)");
-        if !keyboard::simulate::shift_enter() {
-            eprintln!("Rust: Shift+Enter 1 failed");
-            return false;
+    if text.is_empty() {
+        return true;
+    }
+
+    // Step 1: Shift+Enter x2 for layout
+    eprintln!("Rust: Creating layout (Shift+Enter x2)");
+    if !keyboard::simulate::shift_enter() {
+        eprintln!("Rust: Shift+Enter 1 failed");
+        return false;
+    }
+    if !keyboard::simulate::shift_enter() {
+        eprintln!("Rust: Shift+Enter 2 failed");
+        return false;
+    }
+
+    // Step 2: Save text length for later deletion
+    *GHOST_TEXT_LENGTH.lock().unwrap() = text.len();
+
+    // Step 3: Paste ghost text (saves old clipboard internally)
+    eprintln!("Rust: Pasting ghost text");
+    match keyboard::paste::insert_via_clipboard_and_save(&text) {
+        Ok(old_clipboard) => {
+            // Save old clipboard to global for Tab/Esc handling
+            *OLD_CLIPBOARD.lock().unwrap() = old_clipboard;
+            eprintln!("Rust: ✅ Ghost text inserted");
+            true
         }
-        thread::sleep(Duration::from_millis(10));
-
-        if !keyboard::simulate::shift_enter() {
-            eprintln!("Rust: Shift+Enter 2 failed");
-            return false;
-        }
-        thread::sleep(Duration::from_millis(10));
-
-        // Step 2: Paste the actual text via clipboard (like ito does)
-        eprintln!("Rust: Pasting text via clipboard");
-        if let Err(e) = keyboard::paste::insert_via_clipboard(&text) {
+        Err(e) => {
             eprintln!("Rust: Paste failed: {}", e);
-            return false;
+            false
         }
-        eprintln!("Rust: ✅ Layout + paste completed");
-    } else {
-        eprintln!("Rust: Empty text, only doing layout");
-        if !keyboard::simulate::shift_enter() {
-            eprintln!("Rust: Shift+Enter 1 failed");
-            return false;
-        }
-        thread::sleep(Duration::from_millis(10));
+    }
+}
 
-        if !keyboard::simulate::shift_enter() {
-            eprintln!("Rust: Shift+Enter 2 failed");
+/// FFI: Accept ghost text (Tab key)
+/// Restores old clipboard, keeps ghost text
+#[no_mangle]
+pub extern "C" fn superspeed_accept_ghost_text() -> bool {
+    eprintln!("Rust: Accept ghost text (Tab)");
+
+    // Just restore old clipboard
+    if let Err(e) = restore_old_clipboard() {
+        eprintln!("Rust: Failed to restore clipboard: {}", e);
+        return false;
+    }
+
+    eprintln!("Rust: ✅ Ghost text accepted, clipboard restored");
+    true
+}
+
+/// FFI: Reject ghost text (Esc key)
+/// Deletes ghost text and restores old clipboard
+#[no_mangle]
+pub extern "C" fn superspeed_reject_ghost_text() -> bool {
+    eprintln!("Rust: Reject ghost text (Esc)");
+
+    // Step 1: Delete ghost text (backspace N times)
+    let delete_count = {
+        let length = *GHOST_TEXT_LENGTH.lock().unwrap();
+        length + 2  // Ghost text + 2 newlines from Shift+Enter
+    };
+
+    eprintln!("Rust: Deleting {} characters", delete_count);
+    for i in 0..delete_count {
+        if !keyboard::simulate::backspace() {
+            eprintln!("Rust: Backspace {} failed", i);
             return false;
         }
     }
 
+    // Step 2: Restore old clipboard
+    if let Err(e) = restore_old_clipboard() {
+        eprintln!("Rust: Failed to restore clipboard: {}", e);
+        return false;
+    }
+
+    eprintln!("Rust: ✅ Ghost text rejected, clipboard restored");
     true
+}
+
+/// Helper: Restore old clipboard from global state
+fn restore_old_clipboard() -> Result<(), String> {
+    let old_clipboard = OLD_CLIPBOARD.lock().unwrap().take();
+
+    if let Some(old_text) = old_clipboard {
+        keyboard::paste::restore_clipboard(&old_text)
+    } else {
+        eprintln!("Rust: No old clipboard to restore");
+        Ok(())
+    }
 }

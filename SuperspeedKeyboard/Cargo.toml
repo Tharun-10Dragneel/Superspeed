@@ -7,9 +7,8 @@ edition = "2021"
 crate-type = ["staticlib"]
 
 [dependencies]
-# Modern 2025 objc2 for CoreGraphics (keyboard simulation)
-objc2-core-graphics = "0.3"
-
-# Use stable cocoa for clipboard (proven to work, plain text only)
-cocoa = "0.26"
+# Use same crates as ito (proven to work)
+core-graphics = "0.23"
+core-foundation = "0.9"
+cocoa = "0.25"
 objc = "0.2"
