@@ -60,13 +60,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
         statusItem?.menu = menu
 
-        // TODO: Start SuperspeedTextMode when available
-        // SuperspeedTextMode.shared.start()
+        // Start SuperspeedTextMode (always available, user toggles with Fn key)
+        SuperspeedTextMode.shared.start()
     }
 
     @objc func toggleSuperspeed() {
-        // TODO: Toggle SuperspeedTextMode
-        // SuperspeedTextMode.shared.manualToggle()
+        SuperspeedTextMode.shared.manualToggle()
         updateMenuText()
     }
 
@@ -83,8 +82,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func updateMenuText() {
         if let menu = statusItem?.menu,
            let item = menu.item(at: 0) {
-            // TODO: Update based on SuperspeedTextMode state
-            item.title = "Toggle Superspeed"
+            item.title = SuperspeedTextMode.shared.isActive ? "Disable Superspeed" : "Enable Superspeed"
         }
     }
 }

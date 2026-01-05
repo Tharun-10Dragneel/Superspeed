@@ -50,8 +50,8 @@ struct DashboardView: View {
                 HStack(spacing: 16) {
                     // Toggle button
                     Button(action: {
-                        isSuperspeedActive.toggle()
-                        // SuperspeedTextMode.shared.manualToggle()
+                        SuperspeedTextMode.shared.manualToggle()
+                        isSuperspeedActive = SuperspeedTextMode.shared.isActive
                     }) {
                         VStack(spacing: 12) {
                             Image(systemName: isSuperspeedActive ? "pause.circle.fill" : "play.circle.fill")
@@ -159,7 +159,7 @@ struct DashboardView: View {
                     HStack(alignment: .top, spacing: 12) {
                         Text("3.")
                             .fontWeight(.bold)
-                        Text("Wait 3 seconds - ghost text appears")
+                        Text("Wait 0.8 seconds - ghost text appears")
                     }
                     HStack(alignment: .top, spacing: 12) {
                         Text("4.")
@@ -177,7 +177,7 @@ struct DashboardView: View {
         }
         .frame(minWidth: 800, minHeight: 600)
         .onAppear {
-            // isSuperspeedActive = SuperspeedTextMode.shared.isActive
+            isSuperspeedActive = SuperspeedTextMode.shared.isActive
         }
     }
 }

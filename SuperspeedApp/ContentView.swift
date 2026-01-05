@@ -17,7 +17,7 @@ struct ContentView: View {
                 Text("1. Grant Accessibility + Input Monitoring permissions")
                 Text("2. Press Fn key anywhere to toggle text mode")
                 Text("3. Start typing in any app (TextEdit, Notes, etc.)")
-                Text("4. Stop → Ghost text appears after 3s")
+                Text("4. Stop → Ghost text appears after 0.8s")
                 Text("5. Tab = Accept | Esc = Reject & Regenerate")
             }
             .padding()
@@ -226,7 +226,7 @@ class SuperspeedTextMode {
                 removeInjectedText()
                 injectedText = nil
                 isGenerating = false
-                DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
                     if self.isActive { // Only regenerate if still active
                         self.generateGhostText(isRegeneration: true)
                     }
@@ -235,10 +235,10 @@ class SuperspeedTextMode {
             }
         }
 
-        // User is typing - reset timer
+        // User is typing - reset timer (0.8 second pause triggers ghost text)
         lastTypingTime = Date()
         inactivityTimer?.invalidate()
-        inactivityTimer = Timer.scheduledTimer(withTimeInterval: 3.0, repeats: false) { _ in
+        inactivityTimer = Timer.scheduledTimer(withTimeInterval: 0.8, repeats: false) { _ in
             self.onTypingPaused()
         }
 
@@ -267,19 +267,14 @@ class SuperspeedTextMode {
 
         self.injectedText = dummyText
 
-        // Call Rust to insert ghost text (Shift+Enter x2, then paste)
+        // Rust does EVERYTHING: Shift+Enter x2 + clipboard paste (like ito)
         let success = KeyboardBridge.shared.insertGhostText(dummyText)
 
         if success {
-            print("✅ Dummy ghost text inserted via Rust!")
-            
-            // Rust only does layout now (Shift+Enter x2)
-            // Swift handles the actual paste
-            injectTextWithClipboard(text: dummyText)
-            
+            print("✅ Rust completed: layout + paste")
             // isGenerating stays true until user accepts/rejects
         } else {
-            print("❌ Failed to insert ghost text via Rust")
+            print("❌ Rust failed")
             self.isGenerating = false
         }
     }
@@ -435,7 +430,7 @@ func getFocusedElement() -> AXUIElement? {
 }
 
 func injectTextWithClipboard(text: String) {
-    // Based on ITO's proven clipboard paste method
+    // Based on ITO's proven clipboard paste method (with autorelease pool)
     print("📋 Injecting text via clipboard: '\(text.prefix(50))...'")
 
     // 1. Save current clipboard
@@ -447,26 +442,47 @@ func injectTextWithClipboard(text: String) {
     // 3. Set new text
     NSPasteboard.general.setString(text, forType: .string)
 
-    // 4. Verify clipboard (retry up to 50 times)
-    for _ in 0..<50 {
-        if NSPasteboard.general.string(forType: .string) == text {
+    // 4. Verify clipboard (retry up to 50 times with 2ms delays like ito)
+    var verified = false
+    for attempt in 0..<50 {
+        if let currentText = NSPasteboard.general.string(forType: .string), currentText == text {
+            print("✅ Clipboard verified after \(attempt + 1) attempts")
+            verified = true
             break
         }
-        Thread.sleep(forTimeInterval: 0.01)
+        Thread.sleep(forTimeInterval: 0.002) // 2ms like ito
     }
 
-    // 5. Simulate Cmd+V
-    let source = CGEventSource(stateID: .hidSystemState)
-    let keyDown = CGEvent(keyboardEventSource: source, virtualKey: 0x09, keyDown: true)
-    let keyUp = CGEvent(keyboardEventSource: source, virtualKey: 0x09, keyDown: false)
+    if !verified {
+        print("❌ Failed to verify clipboard was set correctly!")
+        return
+    }
 
-    keyDown?.flags = .maskCommand
-    keyUp?.flags = .maskCommand
+    // 5. Simulate Cmd+V (using ito's proven approach)
+    guard let source = CGEventSource(stateID: .combinedSessionState) else {
+        print("❌ Failed to create event source")
+        return
+    }
 
-    keyDown?.post(tap: .cghidEventTap)
-    keyUp?.post(tap: .cghidEventTap)
+    // Key code 9 = 'V' key
+    guard let vDown = CGEvent(keyboardEventSource: source, virtualKey: 9, keyDown: true),
+          let vUp = CGEvent(keyboardEventSource: source, virtualKey: 9, keyDown: false) else {
+        print("❌ Failed to create keyboard events")
+        return
+    }
 
-    // 6. Wait for paste to complete
+    // Set Command flag on both events
+    vDown.flags = .maskCommand
+    vUp.flags = .maskCommand
+
+    // Post events to HID location (same as ito)
+    print("📤 Posting Cmd+V events...")
+    vDown.post(tap: .cghidEventTap)
+    Thread.sleep(forTimeInterval: 0.01) // 10ms delay
+    vUp.post(tap: .cghidEventTap)
+    print("✅ Cmd+V events posted")
+
+    // 6. Wait for paste to complete (ito waits 1 second!)
     Thread.sleep(forTimeInterval: 1.0)
 
     // 7. Restore original clipboard
