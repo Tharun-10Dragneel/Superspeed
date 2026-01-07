@@ -191,6 +191,11 @@ class SuperspeedTextMode {
     private func onKeyPress(event: CGEvent) -> Unmanaged<CGEvent>? {
         let keyCode = event.getIntegerValueField(.keyboardEventKeycode)
 
+        // Ignore non-typing keys (modifiers, arrows, function keys, etc.)
+        if isNonTypingKey(keyCode: keyCode) {
+            return Unmanaged.passRetained(event)
+        }
+
         // Handle Tab/Esc if ghost text is active
         if injectedText != nil {
             if keyCode == 48 { // Tab
@@ -247,13 +252,39 @@ class SuperspeedTextMode {
     
     private func onTypingPaused() {
         guard isActive, !isGenerating else { return }
-        print("⏸️ User stopped typing. Generating ghost text...")
+        print("⏸️ User stopped typing. Checking for text content...")
 
-        if let userText = getCurrentUserText(), !userText.isEmpty {
+        // Try Method 1: Accessibility API (works in native apps)
+        if let userText = getCurrentUserText() {
+            // Successfully read text from field
+            if userText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+                print("⚠️ Text field is empty - not generating ghost text")
+                return
+            }
             lastUserText = userText
-            isGenerating = true // Prevent duplicate calls
-            generateGhostText(isRegeneration: false)
+            print("📝 User typed (Accessibility API): '\(lastUserText)'")
         }
+        // Try Method 2: Clipboard trick (works in browsers too)
+        else if let clipboardText = KeyboardBridge.shared.readCursorContext(charCount: 100) {
+            // Successfully read text via clipboard
+            if clipboardText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+                print("⚠️ Cursor context is empty - not generating ghost text")
+                return
+            }
+            lastUserText = clipboardText
+            print("📝 User typed (Clipboard): '\(lastUserText)'")
+        }
+        // Fallback: Unknown text (should rarely happen)
+        else {
+            // Can't read text with either method
+            lastUserText = "[typing detected]"
+            print("⚠️ Could not read text with either method (browser mode?)")
+        }
+
+        // Generate ghost text
+        print("👻 Generating ghost text...")
+        isGenerating = true
+        generateGhostText(isRegeneration: false)
     }
     
     private func generateGhostText(isRegeneration: Bool) {
@@ -326,6 +357,49 @@ class SuperspeedTextMode {
     private func checkPermissions() -> Bool {
         let options: NSDictionary = [kAXTrustedCheckOptionPrompt.takeUnretainedValue() as NSString: true]
         return AXIsProcessTrustedWithOptions(options)
+    }
+
+    private func isNonTypingKey(keyCode: Int64) -> Bool {
+        // Modifier keys
+        let modifiers: [Int64] = [
+            56,  // Left Shift
+            60,  // Right Shift
+            55,  // Left Command
+            54,  // Right Command
+            58,  // Left Option
+            61,  // Right Option
+            59,  // Left Control
+            62,  // Right Control
+            57,  // Caps Lock
+            63,  // Fn key
+        ]
+
+        // Arrow keys
+        let arrows: [Int64] = [123, 124, 125, 126]
+
+        // Function keys (F1-F20)
+        let functionKeys: [Int64] = [
+            122, 120, 99, 118, 96, 97, 98, 100, 101, 109, 103, 111,  // F1-F12
+            105, 107, 113, 106, 64, 79, 80, 90  // F13-F20
+        ]
+
+        // Navigation/special keys
+        let specialKeys: [Int64] = [
+            48,  // Tab (we handle this separately for ghost text)
+            53,  // Esc (we handle this separately for ghost text)
+            71,  // Clear
+            114, // Help
+            115, // Home
+            116, // Page Up
+            117, // Delete (forward)
+            119, // End
+            121, // Page Down
+        ]
+
+        return modifiers.contains(keyCode) ||
+               arrows.contains(keyCode) ||
+               functionKeys.contains(keyCode) ||
+               specialKeys.contains(keyCode)
     }
 
     private func getActiveAppName() -> String? {

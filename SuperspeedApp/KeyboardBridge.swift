@@ -39,4 +39,30 @@ final class KeyboardBridge {
     }
     return ok
   }
+
+  /// Read N characters before cursor using clipboard trick
+  /// Returns the text before cursor, or nil on error
+  func readCursorContext(charCount: Int) -> String? {
+    precondition(Thread.isMainThread, "Call on main thread for NSPasteboard safety")
+    precondition(charCount > 0, "charCount must be positive")
+
+    ensureAccessibility()
+
+    // Call Rust FFI function
+    let cStringPtr = superspeed_read_cursor_context(charCount)
+
+    // Check for null pointer (error)
+    guard cStringPtr != nil else {
+      NSLog("❌ Failed to read cursor context (null pointer returned)")
+      return nil
+    }
+
+    // Convert C string to Swift String
+    let text = String(cString: cStringPtr!)
+
+    // Free the C string memory (IMPORTANT!)
+    superspeed_free_string(cStringPtr)
+
+    return text
+  }
 }

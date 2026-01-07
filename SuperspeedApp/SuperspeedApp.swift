@@ -40,9 +40,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var settingsWindow: NSWindow?
 
     func applicationDidFinishLaunching(_ notification: Notification) {
-        // Always show as regular app (with window in Dock)
-        NSApp.setActivationPolicy(.regular)
-        NSApp.activate(ignoringOtherApps: true)
+        // Check if onboarding is needed
+        let onboardingCompleted = UserDefaults.standard.bool(forKey: "onboardingCompleted")
+
+        if !onboardingCompleted {
+            // Show as regular app for onboarding
+            NSApp.setActivationPolicy(.regular)
+            NSApp.activate(ignoringOtherApps: true)
+        } else {
+            // Run as background accessory app (no Dock icon, doesn't steal focus)
+            NSApp.setActivationPolicy(.accessory)
+        }
 
         statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
 
@@ -70,9 +78,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     @objc func openSettings() {
-
-        NSApp.sendAction(Selector(("showPreferencesWindow:")), to: nil, from: nil)
+        // Temporarily switch to regular to show settings window
+        NSApp.setActivationPolicy(.regular)
         NSApp.activate(ignoringOtherApps: true)
+        NSApp.sendAction(Selector(("showPreferencesWindow:")), to: nil, from: nil)
+
+        // Switch back to accessory when window closes (will be handled by window delegate)
     }
 
     @objc func quitApp() {
@@ -86,3 +97,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
 }
+
+
+

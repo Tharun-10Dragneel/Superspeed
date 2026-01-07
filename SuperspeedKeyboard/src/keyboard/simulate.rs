@@ -107,7 +107,18 @@ pub fn shift_enter() -> bool {
         }
     };
 
-    // Create Return key down event with Shift flag
+    // Press Shift down (like real keyboard)
+    let shift_down = match CGEvent::new_keyboard_event(source.clone(), KVK_SHIFT as CGKeyCode, true) {
+        Ok(e) => e,
+        Err(_) => {
+            eprintln!("Failed to create Shift down event");
+            return false;
+        }
+    };
+    shift_down.post(CGEventTapLocation::HID);
+    thread::sleep(Duration::from_millis(20));
+
+    // Press Return (with Shift still held)
     let return_down = match CGEvent::new_keyboard_event(source.clone(), KVK_RETURN as CGKeyCode, true) {
         Ok(e) => e,
         Err(_) => {
@@ -117,10 +128,10 @@ pub fn shift_enter() -> bool {
     };
     return_down.set_flags(CGEventFlags::CGEventFlagShift);
     return_down.post(CGEventTapLocation::HID);
-    thread::sleep(Duration::from_millis(20));  // Delay after posting
+    thread::sleep(Duration::from_millis(20));
 
-    // Create Return key up event with Shift flag
-    let return_up = match CGEvent::new_keyboard_event(source, KVK_RETURN as CGKeyCode, false) {
+    // Release Return
+    let return_up = match CGEvent::new_keyboard_event(source.clone(), KVK_RETURN as CGKeyCode, false) {
         Ok(e) => e,
         Err(_) => {
             eprintln!("Failed to create Return up event");
@@ -129,7 +140,18 @@ pub fn shift_enter() -> bool {
     };
     return_up.set_flags(CGEventFlags::CGEventFlagShift);
     return_up.post(CGEventTapLocation::HID);
-    thread::sleep(Duration::from_millis(20));  // Delay after posting
+    thread::sleep(Duration::from_millis(20));
+
+    // Release Shift
+    let shift_up = match CGEvent::new_keyboard_event(source, KVK_SHIFT as CGKeyCode, false) {
+        Ok(e) => e,
+        Err(_) => {
+            eprintln!("Failed to create Shift up event");
+            return false;
+        }
+    };
+    shift_up.post(CGEventTapLocation::HID);
+    thread::sleep(Duration::from_millis(20));
 
     true
 }

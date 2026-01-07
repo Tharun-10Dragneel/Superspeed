@@ -1,6 +1,7 @@
 pub mod keyboard {
     pub mod simulate;
     pub mod paste;
+    pub mod text_reader;
 }
 
 use std::ffi::{CStr, c_char};
@@ -38,6 +39,10 @@ pub extern "C" fn superspeed_insert_ghost_text_v2(text_ptr: *const c_char) -> bo
         eprintln!("Rust: Shift+Enter 2 failed");
         return false;
     }
+
+    // Wait for Shift+Enter to complete before pasting
+    eprintln!("⏳ Waiting for layout to complete...");
+    std::thread::sleep(std::time::Duration::from_millis(100));
 
     // Step 2: Save text length for later deletion
     *GHOST_TEXT_LENGTH.lock().unwrap() = text.len();
@@ -113,5 +118,41 @@ fn restore_old_clipboard() -> Result<(), String> {
     } else {
         eprintln!("Rust: No old clipboard to restore");
         Ok(())
+    }
+}
+
+/// FFI: Read cursor context (text before cursor)
+/// Returns null-terminated C string, or null pointer on error
+/// Caller must free the returned string with superspeed_free_string()
+#[no_mangle]
+pub extern "C" fn superspeed_read_cursor_context(char_count: usize) -> *mut c_char {
+    eprintln!("Rust: Reading {} characters before cursor", char_count);
+
+    match keyboard::text_reader::read_cursor_context(char_count) {
+        Ok(text) => {
+            eprintln!("Rust: ✅ Read cursor context: '{}'", text);
+            // Convert Rust String to C string
+            match std::ffi::CString::new(text) {
+                Ok(c_string) => c_string.into_raw(),
+                Err(e) => {
+                    eprintln!("Rust: Failed to convert to C string: {}", e);
+                    std::ptr::null_mut()
+                }
+            }
+        }
+        Err(e) => {
+            eprintln!("Rust: ❌ Failed to read cursor context: {}", e);
+            std::ptr::null_mut()
+        }
+    }
+}
+
+/// FFI: Free string allocated by Rust
+#[no_mangle]
+pub extern "C" fn superspeed_free_string(ptr: *mut c_char) {
+    if !ptr.is_null() {
+        unsafe {
+            let _ = std::ffi::CString::from_raw(ptr);
+        }
     }
 }
